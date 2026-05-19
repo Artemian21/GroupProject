@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Календар</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="calendarStyles.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">Командний проєкт</div>
+
+    <nav class="nav">
+        <a href="../../../index.html">Головна</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <div class="calendar-nav">
+        <button id="prevMonth">Попередній</button>
+
+        <h2 id="monthTitle"></h2>
+
+        <button id="nextMonth">Наступний</button>
+    </div>
+
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Пн</th>
+                <th>Вт</th>
+                <th>Ср</th>
+                <th>Чт</th>
+                <th>Пт</th>
+                <th>Сб</th>
+                <th>Нд</th>
+            </tr>
+        </thead>
+
+        <tbody id="calendarBody"></tbody>
+    </table>
+
+</main>
+
+<script src="calendar.js"></script>
+
+</body>
+</html>

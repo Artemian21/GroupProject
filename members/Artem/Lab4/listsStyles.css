@@ -1,0 +1,44 @@
+.color-panel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+    padding: 12px 16px;
+
+    background: #f8fafc;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.games li,
+.movies li {
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: .2s;
+}
+
+.games li:nth-child(2n) {
+    background-color: rgb(135, 209, 234);
+}
+
+.movies li:nth-child(3n + 2) {
+    background-color: rgb(144, 238, 144);
+}
+
+.subjects {
+    margin-top: 10px;
+}
+
+.subjects dt {
+    font-weight: 700;
+    margin-top: 12px;
+    color: #1e293b;
+}
+
+.subjects dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: #475569;
+    line-height: 1.4;
+}
