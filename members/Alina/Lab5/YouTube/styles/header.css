@@ -1,0 +1,213 @@
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  background: var(--bg);
+}
+
+/* : + логотип */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+}
+
+.hamburger {
+  width: 40px; 
+  height: 40px;
+  display: flex; 
+  -items: center; 
+  justify-content: center;
+  background: none; 
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .2s;
+  flex-shrink: 0;
+}
+.hamburger:hover { background: var(--surface2); }
+
+.hamburger i { font-size: 24px; pointer-events: none; }
+
+/* іконка + текст "YouTube" + UA */
+.logo {
+  display: flex; 
+  align-items: center; 
+  gap: 4px;
+  text-decoration: none;
+}
+.logo img { display: block; }
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -3px;
+}
+.logo-ua {
+  font-size: 10px; color: var(--text-muted);
+  margin-top: -14px; margin-left: 2px;
+}
+
+/* центр - пошук */
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  max-width: 720px;
+  margin: 0 16px;
+}
+
+/* пошук */
+.search-bar {
+  display: flex;
+  flex: 1;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  overflow: hidden;
+  background: #121212;
+}
+
+.search-input-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.search-bar input {
+  flex: 1;
+  background: transparent;
+  border: none; outline: none;
+  font-size: 16px;
+}
+
+.keyboard-icon {
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 18px;
+  transition: color .2s;
+}
+.keyboard-icon:hover { color: var(--text); }
+
+.search-btn {
+  width: 64px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  background: var(--surface2);
+  border: none; 
+  border-left: 1px solid var(--border);
+  cursor: pointer;
+  transition: background .2s;
+}
+.search-btn i { font-size: 20px; }
+.search-btn:hover { background: var(--surface-hover); }
+
+.mic-btn {
+  width: 40px; 
+  height: 40px;
+  flex-shrink: 0;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  background: var(--surface2);
+  border: none; 
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .2s;
+}
+.mic-btn i { font-size: 22px; }
+.mic-btn:hover { background: var(--surface-hover); }
+
+/* створити + дзвоник + профіль */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.create-btn {
+  display: flex; 
+  align-items: center; 
+  gap: 8px;
+  height: 36px; 
+  padding: 0 16px 0 12px;
+  background: var(--surface2);
+  border: none; 
+  border-radius: 20px;
+  font-size: 14px; 
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s;
+}
+.create-btn:hover { background: var(--surface-hover); }
+.create-btn i { font-size: 18px; }
+
+/* Обгортка для дзвоника*/
+.notification-wrapper {
+  position: relative;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+/* дзвоник */
+.icon-btn {
+  width: 40px; 
+  height: 40px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  background: none; 
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .2s;
+}
+.icon-btn:hover { background: var(--surface2); }
+.icon-btn .material-symbols-outlined { font-size: 24px; }
+
+/* Лічильник дзвоника */
+.notification-badge {
+  position: absolute;
+  top: 2px; 
+  right: 0;
+  background: #cc0000; 
+  color: #fff;
+  font-size: 11px; 
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+  pointer-events: none;
+}
+
+.profile-pic {
+  width: 36px; 
+  height: 36px;
+  border-radius: 50%; 
+  object-fit: cover;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  /* Текст кнопки "Створити" ховається, залишається лише іконка */
+  .header-left { width: auto; }
+  .create-btn span { display: none; }
+  .create-btn { padding: 0 10px; }
+}
+@media (max-width: 600px) {
+  /* На мобільному пошук ховається повністю */
+  .header-center { display: none; }
+  .header-left { width: auto; }
+}

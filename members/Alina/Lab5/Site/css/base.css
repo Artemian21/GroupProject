@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Форм-елементи успадковують шрифт */
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+:root {
+    --color-navy:      #202846;   /* темно-синій фон шапки/футера */
+    --color-navy-mid:  #444765;   /* середній синій (кнопки) */
+    --color-lavender:  #C6C6DC;   /* блідо-лавандовий (page-title bg) */
+    --color-bg:        #dfdfdf;   /* фон сторінки */
+    --color-card-bg:   #BDBDC6;   /* фон картки бронювання */
+    --color-info-bg:   #e5e5e5;   /* фон інфо-блоків */
+    --color-location-dropdown-bg:   #a3a5a9f9;
+    --color-form-bg:   #f2f2f2;   /* фон форми */
+    --color-text:      #333333;
+    --color-text-mid:  #444444;
+    --color-white:     #ffffff;
+
+    --radius-btn:      20px;
+    --transition:      0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-title-wrapper {
+    background-color: var(--color-lavender);
+    width: 100%;
+}
+
+.page-title-wrapper .container {
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.page-title {
+    font-size: 30px;
+    color: var(--color-navy);
+    font-style: italic;
+    font-weight: normal;
+}
+
+main.container {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+}
+
+.btn-up {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-navy-mid);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color var(--transition), transform var(--transition);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.btn-up:hover {
+    background-color: var(--color-navy);
+    transform: translateY(-3px);
+}

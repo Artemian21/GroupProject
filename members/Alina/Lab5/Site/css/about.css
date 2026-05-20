@@ -1,0 +1,41 @@
+.about-banner {
+    background-image: url('../img/Photo1.png');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+    text-align: center;
+    padding: 20px;
+}
+
+.about-banner h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.about-banner p {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.about-text-block {
+    background-color: #d1d1d1;
+    padding: 40px;
+    color: var(--color-text);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.about-text-block p {
+    margin-bottom: 18px;
+}
+
+.about-text-block p:last-child {
+    margin-bottom: 0;
+}

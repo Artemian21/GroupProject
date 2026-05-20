@@ -1,0 +1,40 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a, button, input, select, textarea {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+:root {
+  --bg:             #0f0f0f;
+  --surface:        #212121;
+  --surface2:       #272727;
+  --surface-hover:  #3f3f3f;
+  --text:           #f1f1f1;
+  --text-muted:     #aaaaaa;
+  --accent:         #ff0000;
+  --border:         #303030;
+  --header-h:       56px;
+  --sidebar-w:      240px;
+  --sidebar-mini-w: 72px;
+  --chips-h:        52px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* шапка + бокова панель + контент */
+.layout {
+  display: flex;
+  margin-top: var(--header-h);
+}

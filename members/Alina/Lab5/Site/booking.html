@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронювання</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+<body id="top">
+
+    <div id="header-placeholder"></div>
+
+    <div class="page-title-wrapper">
+        <div class="container">
+            <h1 class="page-title">Забронювати будиночок</h1>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- Фільтр -->
+       <div class="location-filter-wrapper">
+    <div class="location-filter" role="button" aria-haspopup="listbox" aria-expanded="false">
+        <span>Оберіть місцерозташування</span>
+        <span class="filter-arrow">▼</span>
+    </div>
+    <ul class="location-dropdown" role="listbox">
+        <li data-location="bakota">Бакота</li>
+        <li data-location="karpaty">Карпати</li>
+        <li data-location="kyiv">Київ</li>
+        <li data-location="odesa">Одеська область</li>
+    </ul>
+</div>
+
+        <div class="booking-list">
+
+            <div class="booking-card" data-location="bakota">
+                <img src="img/bakota.png" 
+                alt="Бакота" class="booking-img">
+                <span class="material-symbols-outlined star-icon" title="Додати в обране">star</span>
+                <div class="booking-info">
+                    <div class="booking-title-wrapper">
+                        <h3>Незвідана Бакота</h3>
+                    </div>
+                    <p>У Хмельницькій області розташований загублений край — Бакота. Мальовничий каньйон з давньою історією захоплює своїми просторами та незвичайною атмосферою. Бджільництво, свіжий мед із польових трав, дотик до природи.</p>
+                    <button class="btn-details">Детальніше</button>
+                </div>
+            </div>
+
+            <div class="booking-card" data-location="karpaty">
+                <img src="img/karpaty.png" 
+                     alt="Карпати" class="booking-img">
+                <span class="material-symbols-outlined star-icon" title="Додати в обране">star</span>
+                <div class="booking-info">
+                    <div class="booking-title-wrapper">
+                        <h3>Полонини Карпат</h3>
+                    </div>
+                    <p>Полонини Карпат, у селі Орів посеред гір розташувався затишний куточок для незабутніх вражень. Справжні українські гори, власноручне сироваріння на полонині, водоспади та вікові дерева чекають на Вас.</p>
+                    <a href="booking-detail.html" class="btn-details">Детальніше</a>
+                </div>
+            </div>
+
+            <div class="booking-card" data-location="kyiv">
+                <img src="img/kyiv.png" 
+                     alt="Київщина" class="booking-img">
+                <span class="material-symbols-outlined star-icon" title="Додати в обране">star</span>
+                <div class="booking-info">
+                    <div class="booking-title-wrapper">
+                        <h3>Автентична Київщина</h3>
+                    </div>
+                    <p>Неподалік центра Києва розташувалось автентичне українське село на території однойменного села Пирогово. Дерев'яні млини, запашний хліб, приготовлений своїми руками, українські пісні та багато іншого чекає на вас уже зараз.</p>
+                    <button class="btn-details">Детальніше</button>
+                </div>
+            </div>
+
+            <div class="booking-card" data-location="odesa">
+                <img src="img/odesa.png" 
+                     alt="Одещина" class="booking-img">
+                <span class="material-symbols-outlined star-icon" title="Додати в обране">star</span>
+                <div class="booking-info">
+                    <div class="booking-title-wrapper">
+                        <h3>Нетипова Одещина</h3>
+                    </div>
+                    <p>В Одеській області знаходиться мальовниче містечко Вилкове. Його ще називають «українською Венецією». Вилкове — це містечко на воді, весь у каналах. Розташоване в місці, де зустрічаються річка Дунай і Чорне море. Люди пересуваються переважно човнами.</p>
+                    <button class="btn-details">Детальніше</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
