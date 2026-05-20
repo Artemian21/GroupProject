@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HolidayTime — Бронювання будиночка в Карпатах</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-top">
+    <div class="site-top__brand">
+      <img src="images/logo.png" alt="HolidayTime">
+    </div>
+    <nav class="site-top__menu">
+      <a href="index.html" class="menu__item">ГОЛОВНА</a>
+      <span class="menu__sep">|</span>
+      <a href="pro-nas.html" class="menu__item">ПРО НАС</a>
+      <span class="menu__sep">|</span>
+      <a href="bronjuvannya.html" class="menu__item menu__item--current">ЗАБРОНЮВАТИ</a>
+      <span class="menu__sep">|</span>
+      <a href="kontakty.html" class="menu__item">КОНТАКТИ</a>
+      <span class="menu__sep">|</span>
+      <a href="kabinet.html" class="menu__item">ОСОБИСТИЙ КАБІНЕТ</a>
+      <span class="menu__sep">|</span>
+      <div class="menu__lng">
+        <img src="images/globe.svg" alt="Мова">
+        <select class="menu__lng-sel">
+          <option value="ua">UA</option>
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <section class="pg-banner">
+    <h1 class="pg-banner__heading"><em>Бронювання будиночка в Карпатах</em></h1>
+  </section>
+
+  <main class="unit-page">
+
+    <div class="return-bar">
+      <a href="bronjuvannya.html" class="return-btn">&#8592; Назад</a>
+    </div>
+
+    <section class="unit-gallery">
+      <img src="images/karpaty-main.png" alt="Будиночок зовні" class="unit-img ui-main">
+      <div class="unit-desc">
+        <p>
+          Затишні дерев'яні будиночки, які заховались на окраїні лісу, зустрічатимуть Вас чудовим
+          краєвидом на ранкові полонини.
+        </p>
+        <p>
+          Ви можете обрати кількість кімнат та місце, яке буде ідеальним для Вас. Територія підійде як
+          для великих компаній, так і для пар, які хочуть усамітнення.
+        </p>
+      </div>
+      <img src="images/karpaty-inside1.png" alt="Інтер'єр" class="unit-img ui-a">
+      <img src="images/karpaty-inside2.png" alt="Спальня" class="unit-img ui-b">
+      <img src="images/karpaty-inside3.png" alt="Санвузол" class="unit-img ui-c">
+    </section>
+
+    <section class="dates-panel">
+      <h2 class="dates-panel__title">Наявність місць</h2>
+
+      <div class="dates-panel__box">
+        <p class="dates-panel__question">Коли б Ви хотіли зупинитись у помешканні Полонини Карпат?</p>
+
+        <div class="dates-panel__form">
+
+          <div class="dates-panel__row">
+            <div class="dt-field">
+              <label class="dt-field__lbl">Дата заїзду</label>
+              <div class="dt-field__wrap">
+                <span class="dt-field__icon">&#128197;</span>
+                <input class="dt-field__input" type="date">
+                <span class="dt-field__caret">&#9660;</span>
+              </div>
+            </div>
+
+            <div class="dt-field">
+              <label class="dt-field__lbl">Дата виїзду</label>
+              <div class="dt-field__wrap">
+                <span class="dt-field__icon">&#128197;</span>
+                <input class="dt-field__input" type="date">
+                <span class="dt-field__caret">&#9660;</span>
+              </div>
+            </div>
+
+            <button class="dates-panel__btn">Перевірити наявність вільних місць</button>
+          </div>
+
+          <div class="guests-row">
+            <div class="counter">
+              <label class="counter__lbl">Номери</label>
+              <input class="counter__input" type="number" value="1" min="1">
+            </div>
+            <div class="counter">
+              <label class="counter__lbl">Дорослі</label>
+              <input class="counter__input" type="number" value="2" min="1">
+            </div>
+            <div class="counter">
+              <label class="counter__lbl">Діти</label>
+              <input class="counter__input" type="number" value="0" min="0">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <table class="beds-table">
+        <thead class="beds-table__head">
+          <tr>
+            <th class="beds-table__th">Вміщує</th>
+            <th class="beds-table__th">Тип розміщення</th>
+            <th class="beds-table__th">Ціна</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="beds-table__row">
+            <td class="beds-table__td beds-table__td--cap">
+              <span><svg width="24" height="24" viewBox="0 0 42 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20.625 20C22.956 20 25.2346 19.4135 27.1728 18.3147C29.1109 17.2159 30.6215 15.6541 31.5136 13.8268C32.4056 11.9996 32.639 9.98891 32.1843 8.0491C31.7295 6.10929 30.607 4.32746 28.9588 2.92894C27.3105 1.53041 25.2105 0.578004 22.9243 0.192152C20.6381 -0.193701 18.2684 0.00433281 16.1148 0.761209C13.9612 1.51809 12.1206 2.79981 10.8255 4.4443C9.53051 6.08879 8.83929 8.02219 8.83929 10C8.83929 12.6522 10.081 15.1957 12.2912 17.0711C14.5015 18.9464 17.4992 20 20.625 20ZM38.3036 45C39.085 45 39.8344 44.7366 40.387 44.2678C40.9396 43.7989 41.25 43.163 41.25 42.5C41.25 37.8587 39.077 33.4075 35.2091 30.1256C31.3411 26.8438 26.0951 25 20.625 25C15.1549 25 9.90886 26.8438 6.04092 30.1256C2.17298 33.4075 8.15107e-08 37.8587 0 42.5C0 43.163 0.310427 43.7989 0.862989 44.2678C1.41555 44.7366 2.16499 45 2.94643 45H38.3036Z"
+                    fill="black" />
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 42 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20.625 20C22.956 20 25.2346 19.4135 27.1728 18.3147C29.1109 17.2159 30.6215 15.6541 31.5136 13.8268C32.4056 11.9996 32.639 9.98891 32.1843 8.0491C31.7295 6.10929 30.607 4.32746 28.9588 2.92894C27.3105 1.53041 25.2105 0.578004 22.9243 0.192152C20.6381 -0.193701 18.2684 0.00433281 16.1148 0.761209C13.9612 1.51809 12.1206 2.79981 10.8255 4.4443C9.53051 6.08879 8.83929 8.02219 8.83929 10C8.83929 12.6522 10.081 15.1957 12.2912 17.0711C14.5015 18.9464 17.4992 20 20.625 20ZM38.3036 45C39.085 45 39.8344 44.7366 40.387 44.2678C40.9396 43.7989 41.25 43.163 41.25 42.5C41.25 37.8587 39.077 33.4075 35.2091 30.1256C31.3411 26.8438 26.0951 25 20.625 25C15.1549 25 9.90886 26.8438 6.04092 30.1256C2.17298 33.4075 8.15107e-08 37.8587 0 42.5C0 43.163 0.310427 43.7989 0.862989 44.2678C1.41555 44.7366 2.16499 45 2.94643 45H38.3036Z"
+                    fill="black" />
+                </svg>
+              </span>
+            </td>
+            <td class="beds-table__td">
+              <p class="beds-table__room-name"><em>Двомісний номер</em></p>
+              <p class="beds-table__room-bed">1 широке двоспальне ліжко</p>
+            </td>
+            <td class="beds-table__td">
+              <button class="beds-table__price-btn"><em>Показати ціни</em></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+  </main>
+
+  <button class="go-up" aria-label="Прокрутити вгору">&#8679;</button>
+
+  <footer class="site-bottom">
+    <p class="site-bottom__text">© 2021 HolidayTime. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>

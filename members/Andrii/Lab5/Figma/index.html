@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HolidayTime — Головна</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-top">
+    <div class="site-top__brand">
+      <img src="images/logo.png" alt="HolidayTime">
+    </div>
+    <nav class="site-top__menu">
+      <a href="index.html" class="menu__item menu__item--current">ГОЛОВНА</a>
+      <span class="menu__sep">|</span>
+      <a href="pro-nas.html" class="menu__item">ПРО НАС</a>
+      <span class="menu__sep">|</span>
+      <a href="bronjuvannya.html" class="menu__item">ЗАБРОНЮВАТИ</a>
+      <span class="menu__sep">|</span>
+      <a href="kontakty.html" class="menu__item">КОНТАКТИ</a>
+      <span class="menu__sep">|</span>
+      <a href="kabinet.html" class="menu__item">ОСОБИСТИЙ КАБІНЕТ</a>
+      <span class="menu__sep">|</span>
+      <div class="menu__lng">
+        <img src="images/globe.svg" alt="Мова">
+        <select class="menu__lng-sel">
+          <option value="ua">UA</option>
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="main-banner">
+      <img src="images/hero-bg.png" alt="Гори" class="main-banner__img">
+      <div class="main-banner__content">
+        <h1 class="main-banner__title">HolidayTime</h1>
+        <p class="main-banner__sub">Автентичний відпочинок серед українського колориту!</p>
+      </div>
+    </section>
+
+    <section class="showcase">
+      <div class="showcase__media">
+        <img src="images/slider-cabin.png" alt="Будиночок в Карпатах" class="showcase__img">
+        <button class="showcase__next">&#8250;</button>
+        <a href="dom.html" class="showcase__link">Переглянути &#8594;</a>
+      </div>
+      <div class="showcase__meta">
+        <div class="showcase__dots">
+          <span class="pip"></span>
+          <span class="pip pip--on"></span>
+          <span class="pip pip--on"></span>
+          <span class="pip pip--on"></span>
+          <span class="pip pip--on"></span>
+          <span class="pip pip--on"></span>
+          <span class="pip pip--on"></span>
+        </div>
+        <p class="showcase__caption">
+          Полонини Карпат, у селі Орів посеред гір розташувався затишний куточок для незабутніх вражень.
+          Справжні українські гори, власноруч сироваріння на полонині, водоспади та вікові дерева чекають на Вас.
+        </p>
+      </div>
+    </section>
+
+    <section class="pair-section">
+      <div class="pair-section__photo">
+        <img src="images/couple.png" alt="Пара на відпочинку" class="pair-section__img">
+      </div>
+      <div class="pair-section__copy">
+        <p>
+          Активний відпочинок у нетипових локаціях.
+          Незаймана природа та місцевий колорит
+          подарують Вам незабутні враження.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-form">
+      <h2 class="contact-form__heading">Зворотній зв'язок</h2>
+      <div class="contact-form__body">
+        <label class="contact-form__lbl" for="name">Ім'я</label>
+        <input class="contact-form__field" type="text" id="name" placeholder="Введіть ім'я">
+        <label class="contact-form__lbl" for="phone">Номер телефону</label>
+        <input class="contact-form__field" type="tel" id="phone" placeholder="Введіть номер телефону">
+        <button class="contact-form__submit">Запросити виклик</button>
+      </div>
+    </section>
+
+  </main>
+
+  <button class="go-up" aria-label="Прокрутити вгору">&#8679;</button>
+
+  <footer class="site-bottom">
+    <p class="site-bottom__text">© 2021 HolidayTime. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

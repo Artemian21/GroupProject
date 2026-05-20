@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HolidayTime — Забронювати будиночок</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-top">
+    <div class="site-top__brand">
+      <img src="images/logo.png" alt="HolidayTime">
+    </div>
+    <nav class="site-top__menu">
+      <a href="index.html" class="menu__item">ГОЛОВНА</a>
+      <span class="menu__sep">|</span>
+      <a href="pro-nas.html" class="menu__item">ПРО НАС</a>
+      <span class="menu__sep">|</span>
+      <a href="bronjuvannya.html" class="menu__item menu__item--current">ЗАБРОНЮВАТИ</a>
+      <span class="menu__sep">|</span>
+      <a href="kontakty.html" class="menu__item">КОНТАКТИ</a>
+      <span class="menu__sep">|</span>
+      <a href="kabinet.html" class="menu__item">ОСОБИСТИЙ КАБІНЕТ</a>
+      <span class="menu__sep">|</span>
+      <div class="menu__lng">
+        <img src="images/globe.svg" alt="Мова">
+        <select class="menu__lng-sel">
+          <option value="ua">UA</option>
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <section class="pg-banner">
+    <h1 class="pg-banner__heading"><em>Забронювати будиночок</em></h1>
+  </section>
+
+  <main class="reserve-wrap">
+
+    <div class="place-select">
+      <select class="place-select__input">
+        <option value="" disabled selected>Оберіть місцерозташування</option>
+        <option value="bakota">Бакота</option>
+        <option value="karpaty">Карпати</option>
+        <option value="kyiv">Київ</option>
+        <option value="odesa">Одеська область</option>
+      </select>
+      <span class="place-select__caret">&#9660;</span>
+    </div>
+
+    <ul class="places-list">
+
+      <li class="place-card">
+        <div class="place-card__thumb">
+          <img src="images/bakota.png" alt="Незвідана Бакота" class="place-card__photo">
+        </div>
+        <div class="place-card__body">
+          <div class="place-card__top">
+            <h2 class="place-card__name"><em>Незвідана Бакота</em></h2>
+            <button class="place-card__star" aria-label="Додати до обраних">&#9733;</button>
+          </div>
+          <p class="place-card__text">
+            У Хмельницькій області розташований загублений край - Бакота. Мальовничий каньйон з давньою
+            історією захоплює своїми просторами та незвичною атмосферою. Бджільництво, свіжий мед із
+            польових трав, дотик до природи.
+          </p>
+          <div class="place-card__actions">
+            <a href="dom.html" class="place-card__link">Детальніше</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="place-card">
+        <div class="place-card__thumb">
+          <img src="images/karpaty.png" alt="Полонини Карпат" class="place-card__photo">
+        </div>
+        <div class="place-card__body">
+          <div class="place-card__top">
+            <h2 class="place-card__name"><em>Полонини Карпат</em></h2>
+            <button class="place-card__star" aria-label="Додати до обраних">&#9733;</button>
+          </div>
+          <p class="place-card__text">
+            Полонини Карпат, у селі Орів посеред гір розташувався затишний куточок для незабутніх вражень.
+            Справжні українські гори, власноруч сироваріння на полонині, водоспади та вікові дерева чекають на Вас.
+          </p>
+          <div class="place-card__actions">
+            <a href="dom.html" class="place-card__link">Детальніше</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="place-card">
+        <div class="place-card__thumb">
+          <img src="images/kyiv.png" alt="Автентична Київщина" class="place-card__photo">
+        </div>
+        <div class="place-card__body">
+          <div class="place-card__top">
+            <h2 class="place-card__name"><em>Автентична Київщина</em></h2>
+            <button class="place-card__star" aria-label="Додати до обраних">&#9733;</button>
+          </div>
+          <p class="place-card__text">
+            Неподалік центра Києва розташувалось автентичне українське село на території села Пирогово.
+            Дерев'яні млини, запашний хліб, приготований своїми руками, українські пісні та багато іншого.
+          </p>
+          <div class="place-card__actions">
+            <a href="dom.html" class="place-card__link">Детальніше</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="place-card">
+        <div class="place-card__thumb">
+          <img src="images/odesa.png" alt="Нетипова Одещина" class="place-card__photo">
+        </div>
+        <div class="place-card__body">
+          <div class="place-card__top">
+            <h2 class="place-card__name"><em>Нетипова Одещина</em></h2>
+            <button class="place-card__star" aria-label="Додати до обраних">&#9733;</button>
+          </div>
+          <p class="place-card__text">
+            В Одеській області знаходиться містечко Вилкове, яке називають українською Венецією.
+            Це місто на воді з каналами, де люди пересуваються човнами. Нетипова Україна, яка залишає враження.
+          </p>
+          <div class="place-card__actions">
+            <a href="dom.html" class="place-card__link">Детальніше</a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+  </main>
+
+  <button class="go-up" aria-label="Прокрутити вгору">&#8679;</button>
+
+  <footer class="site-bottom">
+    <p class="site-bottom__text">© 2021 HolidayTime. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

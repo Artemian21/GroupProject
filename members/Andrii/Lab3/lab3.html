@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Booking</title>
+</head>
+<body>
+
+<table align="center">
+    <tr>
+        <td><img src="img1.jpg" alt="Room 1" width="200"></td>
+        <td width="150"></td>
+        <td><img src="img2.jpg" alt="Room 2" width="200"></td>
+        <td width="150"></td>
+        <td><img src="img3.jpg" alt="Room 3" width="200"></td>
+    </tr>
+</table>
+
+<h1 align="center">Hotel Booking</h1>
+<p align="center">Special discounts for "Програмування для Інтернет" students</p>
+
+<form>
+
+    <table>
+
+    <tr>
+        <td>
+            <h3>Name *</h3>
+            First Name: <input type="text" name="first_name" required><br>
+            Last Name: <input type="text" name="last_name" required>
+        </td>
+
+        <td width="50"></td>
+
+        <td>
+            <h3>E-mail *</h3>
+            <input type="email" name="email" required>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <h3>Room Type</h3>
+            <select name="room_type">
+                <option>Single Room</option>
+                <option>Double Room</option>
+                <option>Luxury Room</option>
+            </select>
+        </td>
+
+        <td></td>
+
+        <td>
+            <h3>Number of Guests *</h3>
+            <input type="number" name="guests" min="1" max="10" required>
+        </td>
+    </tr>
+
+    </table>
+
+    <h3>Arrival Date & Time *</h3>
+    <input type="date" name="arrival_date" required>
+    <input type="time" name="arrival_time" required>
+
+    <h3>Departure Date *</h3>
+    Month:
+    <select name="month">
+        <option>Month</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+    </select>
+
+    Day:
+    <select name="day">
+        <option>Day</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+
+    Year:
+    <select name="year">
+        <option>Year</option>
+        <option>2025</option>
+        <option>2026</option>
+    </select>
+
+    <h3>Free Pickup? *</h3>
+    <input type="radio" name="pickup" value="yes"> Yes Please! - Pick me up on arrival<br>
+    <input type="radio" name="pickup" value="no"> No Thanks - I'll make my own way there
+
+    <h3>Flight Number</h3>
+    <input type="text" name="flight">
+
+    <h3>Meals *</h3>
+    <input type="checkbox" name="meal" value="breakfast"> Breakfast<br>
+    <input type="checkbox" name="meal" value="lunch"> Lunch<br>
+    <input type="checkbox" name="meal" value="tea"> Afternoon Tea<br>
+    <input type="checkbox" name="meal" value="dinner"> Dinner
+
+    <h3>Special Requests</h3>
+    <textarea name="requests" rows="5" cols="40"></textarea>
+
+    <br><br>
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>

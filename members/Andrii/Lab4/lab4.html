@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Списки</title>
+<style>
+.games li:nth-child(2n) {
+    background-color: rgb(135, 209, 234);
+}
+
+.movies li:nth-child(3n + 2) {
+    background-color: rgb(144, 238, 144);
+}
+
+.subjects dt:first-of-type,
+.subjects dt:last-of-type {
+    color: rgb(33, 65, 209);
+}
+
+.subjects dd:first-of-type,
+.subjects dd:last-of-type {
+    background-color: rgb(209, 121, 121);
+}
+</style>
+</head>
+<body>
+
+<h2>Улюблені ігри (маркований список)</h2>
+<ul class="games">
+    <li><span>CS:GO</span></li>
+    <li><span>Total War Warhammer III</span></li>
+    <li><span>Total War Warhammer II</span></li>
+    <li><span>Rome II Total War</span></li>
+    <li><span>Segun II Total War</span></li>
+    <li><span>Cyberpunk 2077</span></li>
+</ul>
+
+<h2>Фільми / серіали / аніме (нумерований список)</h2>
+<ol class="movies">
+    <li><span>Inception</span></li>
+    <li><span>Breaking Bad</span></li>
+    <li><span>Game of Thrones</span></li>
+    <li><span>Interstellar</span></li>
+    <li><span>The Expanse</span></li>
+    <li><span>The Witcher</span></li>
+    <li><span>Gladiator</span></li>
+    <li><span>Merlin</span></li>
+    <li><span>Stranger Things</span></li>
+    <li><span>Avatar</span></li>
+</ol>
+
+<h2>Улюблені предмети (багаторівневий список)</h2>
+<dl class="subjects">
+    <dt>Ноутбук</dt>
+    <dd>Для навчання</dd>
+    <dd>Для ігор</dd>
+
+    <dt>Смартфон</dt>
+    <dd>Для відпочинку</dd>
+    <dd>Для роботи</dd>
+
+    <dt>Навушники</dt>
+    <dd>Для музики</dd>
+    <dd>Для перегляду відео</dd>
+</dl>
+</body>
+</html>
