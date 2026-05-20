@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Календар</title>
+    <link rel="stylesheet" href="julystyles.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Командний проєкт</div>
+        <nav class="nav">
+            <a href="../../../index.html">Головна</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="lab-content calendar-page ivan-calendar-page">
+<div class="calendar-nav">
+    <button id="prevMonth">← попередній місяць</button>
+    <h2 id="monthTitle">Липень 2026 року</h2>
+    <button id="nextMonth">наступний місяць →</button>
+</div>
+    <table>
+        <thead>
+        <tr>
+            <th>Пн</th>
+            <th>Вт</th>
+            <th>Ср</th>
+            <th>Чт</th>
+            <th>Пт</th>
+            <th>Сб</th>
+            <th>Нд</th>
+        </tr>
+        </thead>
+        <tbody id="calendarBody"></tbody>
+    </table>
+        </div>
+    </main>
+    <script>
+        const monthTitle = document.getElementById("monthTitle");
+        const calendarBody = document.getElementById("calendarBody");
+        const monthNames = ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"];
+        const holidays = new Set(["7-7", "7-15"]);
+        const specialDays = new Set(["7-22"]);
+        let currentDate = new Date(2026, 6, 1);
+
+        function weekdayMonday(date) {
+            return (date.getDay() + 6) % 7;
+        }
+
+        function renderCalendar() {
+            calendarBody.innerHTML = "";
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            monthTitle.textContent = `${monthNames[month]} ${year} року`;
+
+            const firstDay = new Date(year, month, 1);
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const startOffset = weekdayMonday(firstDay);
+            const totalCells = Math.ceil((startOffset + daysInMonth) / 7) * 7;
+            const date = new Date(year, month, 1 - startOffset);
+
+            for (let rowIndex = 0; rowIndex < totalCells / 7; rowIndex++) {
+                const row = document.createElement("tr");
+
+                for (let dayIndex = 0; dayIndex < 7; dayIndex++) {
+                    const cell = document.createElement("td");
+                    const day = date.getDate();
+                    const cellMonth = date.getMonth();
+                    const key = `${cellMonth + 1}-${day}`;
+                    cell.textContent = day;
+
+                    if (cellMonth !== month) {
+                        cell.classList.add("other-month");
+                    } else {
+                        if (dayIndex >= 5) cell.classList.add("weekend");
+                        if (holidays.has(key)) cell.classList.add("holiday");
+                        if (specialDays.has(key)) cell.classList.add("special-day");
+                    }
+
+                    row.appendChild(cell);
+                    date.setDate(date.getDate() + 1);
+                }
+
+                calendarBody.appendChild(row);
+            }
+        }
+
+        document.getElementById("prevMonth").addEventListener("click", () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        document.getElementById("nextMonth").addEventListener("click", () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        renderCalendar();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+.ivan-calendar-page table {
+    margin-inline: auto;
+}
+
+.ivan-calendar-page th,
+.ivan-calendar-page td {
+    width: 56px;
+    height: 48px;
+    text-align: center;
+}

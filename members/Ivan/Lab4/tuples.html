@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Списки</title>
+    <link rel="stylesheet" href="tuplesstyles.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Командний проєкт</div>
+        <nav class="nav">
+            <a href="../../../index.html">Головна</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="lab-content lab-list-page ivan-list-page">
+<div class="color-panel">
+    <label for="highlightColor">Колір виділення:</label>
+    <input type="color" id="highlightColor" value="#06905d">
+</div>
+
+<h2>Улюблені ігри</h2>
+        <ul class="games">
+            <li>The Legend of Zelda: Breath of the Wild</li>
+            <li>Overwatch 2</li>
+            <li>Stardew Valley</li>
+            <li>Among Us</li>
+            <li>Hollow Knight</li>
+            <li>Rocket League</li>
+        </ul>
+
+        <h2>Улюблені фільми / серіали / аніме</h2>
+        <ol class="movies">
+            <li>Stranger Things</li>
+            <li>Inception</li>
+            <li>Demon Slayer</li>
+            <li>The Witcher</li>
+            <li>Attack on Titan</li>
+            <li>Interstellar</li>
+            <li>Money Heist</li>
+            <li>Spirited Away</li>
+            <li>The Mandalorian</li>
+            <li>Black Mirror</li>
+        </ol>
+
+        <h2>Улюблені предмети</h2>
+        <dl class="subjects">
+            <dt>Фізика</dt>
+            <dd>Вивчення законів руху, енергії та взаємодії тіл</dd>
+
+            <dt>Історія</dt>
+            <dd>Вивчення минулого людства та важливих подій</dd>
+
+            <dt>Математика</dt>
+            <dd>Розвиток логічного мислення та аналітичних навичок</dd>
+        </dl>
+        </div>
+    </main>
+    <script>
+        const highlightColor = document.getElementById("highlightColor");
+
+        function applyHighlightColor(color) {
+            document.querySelectorAll(".games li:nth-child(2n), .movies li:nth-child(3n + 2), .subjects dd:first-of-type, .subjects dd:last-of-type")
+                .forEach(item => item.style.backgroundColor = color);
+        }
+
+        highlightColor.addEventListener("input", event => {
+            applyHighlightColor(event.target.value);
+        });
+    </script>
+</body>
+
+</html>

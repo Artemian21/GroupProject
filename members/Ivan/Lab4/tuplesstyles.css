@@ -1,0 +1,17 @@
+.games li:nth-child(2n) {
+    background-color: rgb(6, 144, 93);
+}
+
+.movies li:nth-child(3n + 2) {
+    background-color: rgb(6, 20, 130);
+}
+
+.subjects dt:first-of-type,
+.subjects dt:last-of-type {
+    color: rgb(130, 232, 6);
+}
+
+.subjects dd:first-of-type,
+.subjects dd:last-of-type {
+    background-color: rgb(207, 34, 34);
+}

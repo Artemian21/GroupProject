@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Опитування студентів</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Командний проєкт</div>
+        <nav class="nav">
+            <a href="../../../index.html">Головна</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="lab-content">
+<h1>Опитування студентів про якість викладання дисциплін</h1>
+
+        <form action="#" method="post">
+
+            <fieldset>
+                <legend>Інформація про дисципліну</legend>
+
+                <label for="subject">Назва дисципліни:</label>
+                <input type="text" id="subject" name="subject" placeholder="Введіть назву дисципліни" required>
+                <br><br>
+
+                <label for="teacher">Викладач:</label>
+                <input type="text" id="teacher" name="teacher" placeholder="ФІО викладача" required>
+                <br><br>
+
+                <label>Тип заняття:</label>
+                <input type="radio" id="lecture" name="lesson_type" value="Лекція" required>
+                <label for="lecture">Лекція</label>
+                <input type="radio" id="practice" name="lesson_type" value="Практика">
+                <label for="practice">Практика</label>
+                <br><br>
+
+                <label>Оцінка якості викладання:</label><br>
+                <input type="radio" id="excellent" name="quality" value="Відмінно" required>
+                <label for="excellent">Відмінно</label>
+                <input type="radio" id="good" name="quality" value="Добре">
+                <label for="good">Добре</label>
+                <input type="radio" id="average" name="quality" value="Середньо">
+                <label for="average">Середньо</label>
+                <input type="radio" id="poor" name="quality" value="Погано">
+                <label for="poor">Погано</label>
+                <br><br>
+
+                <label>Що вам подобається у викладанні? (можна обрати кілька):</label><br>
+                <input type="checkbox" id="clarity" name="likes" value="Чітке пояснення">
+                <label for="clarity">Чітке пояснення</label><br>
+                <input type="checkbox" id="examples" name="likes" value="Приклади з практики">
+                <label for="examples">Приклади з практики</label><br>
+                <input type="checkbox" id="interaction" name="likes" value="Взаємодія з студентами">
+                <label for="interaction">Взаємодія з студентами</label>
+                <br><br>
+
+                <label for="comment">Коментар або пропозиції:</label><br>
+                <textarea id="comment" name="comment" rows="4" cols="50"
+                    placeholder="Ваш коментар (необов'язково)"></textarea>
+            </fieldset>
+
+            <br>
+
+            <button type="submit">Відправити</button>
+            <button type="reset">Очистити</button>
+        </form>
+        </div>
+    </main>
+</body>
+
+</html>
