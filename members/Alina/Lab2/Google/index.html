@@ -8,63 +8,63 @@
     <link rel="stylesheet" href="../../../../css/style.css">
 </head>
 <body>
-    <div id="header-placeholder" data-root="../../../../"></div>
+<header class="header">
+    <div class="logo">Командний проєкт</div>
+    <nav class="nav">
+        <a href="../../../../index.html">Головна</a>
+    </nav>
+</header>
+<main class="container google-page" id="container">
 
-    <main class="container google-page">
-        
-        <div style="display: flex; justify-content: flex-end; align-items: center; padding: 15px 20px;">
-            <a href="#" class="g-link">Gmail</a>
-            <a href="#" class="g-link">Зображення</a>
-            <a href="#" class="g-link" style="display: flex; align-items: center;">
-                <span class="material-symbols-outlined">apps</span>
-            </a>
-            <a href="#" class="btn-login">Увійти</a>
-        </div>
+    <div class="google-topbar">
+        <a href="#" class="g-link">Gmail</a>
+        <a href="#" class="g-link">Зображення</a>
+        <a href="#" class="g-link google-apps-link">
+            <span class="material-symbols-outlined">apps</span>
+        </a>
+        <a href="#" class="btn-login">Увійти</a>
+    </div>
 
-        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            
-            <h1 style="font-size: 5.5rem; margin-bottom: 20px; font-family: 'Product Sans', Arial, sans-serif; font-weight: 500; letter-spacing: -3px;">
-                <span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span style="color: #FBBC05;">o</span><span style="color: #4285F4;">g</span><span style="color: #34A853;">l</span><span style="color: #EA4335;">e</span>
-            </h1>
-            
-            <div style="position: relative; width: 100%; max-width: 580px;">
-                <span class="material-symbols-outlined" style="position: absolute; left: 15px; top: 12px; color: #9aa0a6;">search</span>
-                
-                <input type="text" name="q" placeholder="Введіть запит..." style="padding-left: 45px; padding-right: 100px;">
-                
-                <div style="position: absolute; right: 15px; top: 12px; color: #70757a; display: flex; gap: 10px;">
-                    <span class="material-symbols-outlined" style="cursor: pointer;">keyboard</span>
-                    <span class="material-symbols-outlined" style="cursor: pointer;">mic</span>
-                    <span class="material-symbols-outlined" style="cursor: pointer;">image_search</span>
-                </div>
-            </div>
+    <div class="google-center">
 
-            <div style="margin-top: 25px; text-align: center;">
-                <input type="button" value="Пошук Google">
-                <input type="button" value="Мені пощастить!">
+        <h1 class="google-logo-text">
+            <span class="google-blue">G</span><span class="google-red">o</span><span class="google-yellow">o</span><span class="google-blue">g</span><span class="google-green">l</span><span class="google-red">e</span>
+        </h1>
+
+        <div class="google-search-form">
+            <span class="material-symbols-outlined google-search-icon">search</span>
+
+            <input type="text" name="q" placeholder="Введіть запит..." class="google-search-input">
+
+            <div class="google-search-actions">
+                <span class="material-symbols-outlined">keyboard</span>
+                <span class="material-symbols-outlined">mic</span>
+                <span class="material-symbols-outlined">image_search</span>
             </div>
         </div>
 
-        <footer class="footer-box">
-            <div style="padding: 15px 30px; border-bottom: 1px solid #dadce0; color: #70757a; font-size: 15px;">
-                Україна
-            </div>
-            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; padding: 15px 30px;">
-                <div>
-                    <a href="#" class="g-link">Про Google</a>
-                    <a href="#" class="g-link">Реклама</a>
-                    <a href="#" class="g-link">Бізнес</a>
-                    <a href="#" class="g-link">Як працює Пошук</a>
-                </div>
-                <div>
-                    <a href="#" class="g-link">Конфіденційність</a>
-                    <a href="#" class="g-link">Умови</a>
-                    <a href="#" class="g-link">Налаштування</a>
-                </div>
-            </div>
-        </footer>
-    </main>
+        <div class="google-actions">
+            <input type="button" value="Пошук Google">
+            <input type="button" value="Мені пощастить!">
+        </div>
+    </div>
 
-    <script src="../../../../header.js"></script>
+    <footer class="footer-box">
+        <div class="google-footer-country">Україна</div>
+        <div class="google-footer-links">
+            <div>
+                <a href="#" class="g-link">Про Google</a>
+                <a href="#" class="g-link">Реклама</a>
+                <a href="#" class="g-link">Бізнес</a>
+                <a href="#" class="g-link">Як працює Пошук</a>
+            </div>
+            <div>
+                <a href="#" class="g-link">Конфіденційність</a>
+                <a href="#" class="g-link">Умови</a>
+                <a href="#" class="g-link">Налаштування</a>
+            </div>
+        </div>
+    </footer>
+</main>
 </body>
 </html>

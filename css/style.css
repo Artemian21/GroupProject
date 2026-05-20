@@ -100,6 +100,17 @@ img {
     padding: 32px;
     overflow-x: auto;
 }
+.lab-content #images{
+    background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=120&h=80&fit=crop") center/cover no-repeat;
+    height: 250px;
+    display: flex;
+    justify-content: center; /* по горизонталі */
+    align-items: center;     /* по вертикалі */
+    gap: 20px;
+}
+.lab-content #images img{
+    border: 5px solid var(--border);
+}
 
 .text-center {
     text-align: center;
@@ -203,7 +214,6 @@ th {
 }
 
 label {
-    display: block;
     margin: 10px 0 6px;
     color: var(--text);
     font-weight: 500;
@@ -318,7 +328,7 @@ input[type="button"]:hover {
     margin-bottom: 18px;
     color: var(--muted);
     text-align: center;
-    font-size: 0.92rem;
+    font-size: 13px;
 }
 
 .labs details {
@@ -379,6 +389,22 @@ input[type="button"]:hover {
 .schedule-page td {
     vertical-align: top;
 }
+.schedule-card {
+    padding: 8px;
+    border-radius: 6px;
+    background: var(--surface); 
+}
+
+.schedule-card.colored {
+    background: var(--accent-soft); 
+}
+
+.schedule-card.split {
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 6px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
 
 .google-page {
     min-height: 560px;
@@ -387,6 +413,12 @@ input[type="button"]:hover {
     justify-content: space-between;
 }
 
+#container{
+    width: min(calc(100% - 32px));
+    padding:0px;
+    margin: 0;
+    margin-top: 10px;
+}
 .google-topbar {
     display: flex;
     justify-content: flex-end;
@@ -395,20 +427,19 @@ input[type="button"]:hover {
 }
 
 .google-center {
-    flex: 1;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 40px 0;
+    align-items: center;
 }
 
 .google-logo-text {
-    margin-bottom: 22px;
-    border: 0;
-    font-family: Arial, sans-serif;
-    font-size: clamp(3.6rem, 10vw, 5.5rem);
+    font-size: 5.5rem;
+    margin-bottom: 20px;
+    font-family: 'Product Sans', Arial, sans-serif;
     font-weight: 500;
+    letter-spacing: -3px;
 }
 
 .google-logo-image {
@@ -434,15 +465,34 @@ input[type="button"]:hover {
 }
 
 .google-search-form {
-    width: min(580px, 100%);
-    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+}
+.google-search-icon {
+    position: absolute;
+    left: 15px;
+    top: 12px;
 }
 
+.google-search-input {
+    padding-left: 45px;
+    padding-right: 100px;
+}
+
+.google-search-actions {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    display: flex;
+    gap: 10px;
+}
 .google-actions {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
+    padding-top: 20px;
 }
 
 .google-language {
@@ -453,7 +503,6 @@ input[type="button"]:hover {
 .google-page .g-link {
     color: #5f6368;
     padding: 0 6px;
-    font-size: 0.9rem;
 }
 
 .google-page .btn-login {
@@ -464,15 +513,17 @@ input[type="button"]:hover {
 }
 
 .google-page .footer-box {
-    margin: 20px -32px -32px;
-    padding: 16px 32px;
-    background: var(--surface-soft);
     border-top: 1px solid var(--border);
+    padding-left: 10px;
 }
 
-.google-footer-country,
+.google-footer-country{
+    display: flex;
+    padding: 8px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
 .google-footer-links {
-    padding: 8px 0;
     text-align: center;
 }
 
@@ -538,6 +589,9 @@ input[type="button"]:hover {
     gap: 10px;
 }
 
+.chess-controls{
+    padding-top: 30px;
+}
 .coords-y {
     display: flex;
     flex-direction: column;

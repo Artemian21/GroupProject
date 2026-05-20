@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Опитування: Академічна доброчесність</title>
+    <link rel="stylesheet" href="../../../../css/style.css">
 </head>
 <body>
-    <div id="header-placeholder" data-root="../../../../"></div>
+    <header class="header">
+        <div class="logo">Командний проєкт</div>
+        <nav class="nav">
+            <a href="../../../../index.html">Головна</a>
+        </nav>
+    </header>
 
-    <h2 align="center">Академічна доброчесність</h2>
-
-    <hr>
-    
-    <form>
+    <main class="container">
+        <div class="lab-content">
+            <h2 align="center">Академічна доброчесність</h2>    
+            <form>
     <p>
         <b>1. Твоя група (наприклад, Бст-121-24-4-ПІ):</b><br>
         <input type="text" name="group" size="30" maxlength="20" required placeholder="Введи свою групу">
@@ -74,14 +79,11 @@
         <input type="time" name="study_time">
     </p>
 
-    <p align="center">
-        <br><br>
-        <input type="submit" value="Надіслати відповіді">
-        <input type="reset" value="Очистити форму">
-    </p>
+            <button type="submit">Надіслати</button>
+            <button type="reset">Очистити</button>
 
 </form>
-    <script src="../../../../header.js"></script>
-
+        </div>
+    </main>
 </body>
 </html>

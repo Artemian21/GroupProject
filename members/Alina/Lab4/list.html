@@ -4,45 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мої списки</title>
-    <style>
-        :root {
-            --color-games-even-bg:    #93fc8d;
-            --color-games-even-text:  #1d2833;
-            --color-movies-blue:      #0400ff;
-            --color-subjects-first-bg:#ffefbb;
-            --color-subjects-first-fg:#2f2401;
-            --color-subjects-last-bg: #ff6868;
-            --color-subjects-last-fg: #2b0000;
-        }
-
-        .games-list li:nth-child(2n) {
-            background-color: var(--color-games-even-bg);
-            color:            var(--color-games-even-text);
-        }
-
-        .movies-list li:nth-child(3n+2) {
-            color: var(--color-movies-blue);
-        }
-
-        .subjects-list dt:first-of-type,
-        .subjects-list dd:first-of-type {
-            background-color: var(--color-subjects-first-bg);
-            color:            var(--color-subjects-first-fg);
-        }
-
-        .subjects-list dt:last-of-type,
-        .subjects-list dd:last-of-type {
-            background-color: var(--color-subjects-last-bg);
-            color:            var(--color-subjects-last-fg);
-        }
-    </style>
+    <link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
-    <div id="header-placeholder" data-root="../../../"></div>
-    <div>
+    <header class="header">
+        <div class="logo">Командний проєкт</div>
+        <nav class="nav">
+            <a href="../../../index.html">Головна</a>
+        </nav>
+    </header>
 
-
-    <h2>Улюблені ігри</h2>
+    <main class="container">
+        <div class="lab-content lab-list-page alina-list-page">
+<h2>Улюблені ігри</h2>
             <label>
             Фон:
             <input type="color" value="#93fc8d"
@@ -118,12 +92,13 @@
         <dt>Програмування для інтернет</dt>
         <dd>Створення вебдодатків та динамічних сайтів, вивчення клієнтських (HTML, CSS, JavaScript) та серверних технологій веброзробки.</dd>
     </dl>
-    </div>
+        </div>
+    </main>
+
     <script>
         function setVar(name, value) {
-            document.documentElement.style.setProperty(name, value);
+            document.querySelector('.alina-list-page').style.setProperty(name, value);
         }
     </script>
-    <script src="../../../header.js"></script>
 </body>
 </html>
