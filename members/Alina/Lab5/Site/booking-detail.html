@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронювання</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/booking-detail.css">
+</head>
+<body id="top">
+    <div id="header-placeholder"></div>
+    <div class="page-title-wrapper">
+        <div class="container">
+            <h1 class="page-title">Бронювання будиночка в Карпатах</h1>
+        </div>
+    </div>
+
+    <main class="container">
+        <a href="booking.html" class="btn-back">
+            <span class="material-symbols-outlined" style="font-size:18px;">arrow_back</span>
+            Назад
+        </a>
+        <table class="detail-gallery">
+            <tr>
+                <td class="gallery-main-cell" rowspan="2">
+                    <img src="img/karpaty.png" alt="Карпати">
+            <img src="img/karpaty_1.png" alt="Кімната 1">
+        </td>
+        <td colspan="2" class="gallery-description">
+            <p>Затишні дерев'яні будиночки, які заховались на окраїні лісу, зустрічатимуть Вас чудовим краєвидом на ранкові полонини.</p>
+            <p>Ви можете обрати кількість кімнат та місце, яке буде ідеальним для Вас. Територія, на якій базуються будиночки, підійде як і для великих компаній, яким потрібно бути поряд у декількох будинках, так і для пар, які хочуть бути на одинці.</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="gallery-thumb-cell">
+            <img src="img/karpaty_2.png" alt="Кімната 2">
+        </td>
+        <td class="gallery-thumb-cell">
+            <img src="img/karpaty_3.png" alt="Кімната 3">
+        </td>
+    </tr>
+</table>
+        <section class="availability-section">
+            <h2>Наявність місць</h2>
+
+            <div class="availability-form">
+                <p>Коли б Ви хотіли зупинитись в помешканні Полонини Карпат?</p>
+                <div class="avail-fields">
+                    <div class="avail-date-group">
+                        <div class="avail-field">
+                            <label for="checkIn">Дата заїзду</label>
+                            <input type="date" id="checkIn" name="checkIn">
+                        </div>
+                        <div class="avail-field">
+                            <label for="checkOut">Дата виїзду</label>
+                            <input type="date" id="checkOut" name="checkOut">
+                        </div>
+                        <button class="btn-check" type="button">Перевірити наявність вільних місць</button>
+                    </div>
+                    <div class="avail-counters">
+                        <div class="counter-group">
+                            <label>Номери</label>
+                            <div class="counter-control">
+                                <button class="counter-btn" data-dir="down" type="button">−</button>
+                                <input type="number" value="1" min="1" max="10" step="1" readonly>
+                                <button class="counter-btn" data-dir="up" type="button">+</button>
+                            </div>
+                        </div>
+                        <div class="counter-group">
+                            <label>Дорослі</label>
+                            <div class="counter-control">
+                                <button class="counter-btn" data-dir="down" type="button">−</button>
+                                <input type="number" value="2" min="1" max="20" step="1" readonly>
+                                <button class="counter-btn" data-dir="up" type="button">+</button>
+                            </div>
+                        </div>
+                        <div class="counter-group">
+                            <label>Діти</label>
+                            <div class="counter-control">
+                                <button class="counter-btn" data-dir="down" type="button">−</button>
+                                <input type="number" value="0" min="0" max="10" step="1" readonly>
+                                <button class="counter-btn" data-dir="up" type="button">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <table class="rooms-table">
+            <thead>
+                <tr>
+                    <th>Вміщує</th>
+                    <th>Тип розміщення</th>
+                    <th>Ціна</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="room-capacity-icons">
+                            <span class="material-symbols-outlined">person</span>
+                            <span class="material-symbols-outlined">person</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="room-type-name">Двомісний номер</div>
+                        <div class="room-type-desc">
+                            1 широке двоспальне ліжко
+                            <span class="material-symbols-outlined room-bed-icon">bed</span>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn-show-price" type="button">Показати ціни</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

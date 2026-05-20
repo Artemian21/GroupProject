@@ -1,0 +1,258 @@
+/* Кнопка "Назад" */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: var(--radius-btn);
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color var(--transition);
+    align-self: flex-start;
+}
+
+.btn-back:hover {
+    background-color: #1a2038;
+}
+
+/* Галерея */
+.detail-gallery {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.detail-gallery td {
+    vertical-align: top;
+}
+
+.gallery-main-cell {
+    width: 40%;
+}
+
+.gallery-main-cell img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    padding-bottom: 4px;
+    padding-right: 4px;
+}
+
+.gallery-description {
+    padding: 10px 50px;
+    font-size: 16px;
+    line-height: 1.7;
+    background-color: var(--color-card-bg);
+    vertical-align: middle;
+}
+
+.gallery-description p:first-child {
+    margin-bottom: 20px;
+}
+
+.gallery-thumb-cell img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+    padding-top: 4px;
+    padding-right: 4px;
+}
+
+/* Наявність місць */
+.availability-section h2 {
+    text-align: center;
+    font-size: 20px;
+    color: var(--color-navy);
+    margin-bottom: 20px;
+}
+
+.availability-form {
+    background-color: var(--color-lavender);
+    border: 1px solid #ccc;
+    padding: 16px 30px;
+}
+
+.availability-form > p {
+    color: var(--color-navy);
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.avail-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.avail-date-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.avail-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.avail-field label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.avail-field input[type="date"] {
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    background-color: var(--color-info-bg);
+    width: 160px;
+}
+
+.btn-check {
+    margin-left: auto;
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color var(--transition);
+    align-self: stretch;
+    width: 180px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.btn-check:hover {
+    background-color: #1a2038;
+}
+
+.avail-counters {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.counter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.counter-group label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.counter-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    background: var(--color-info-bg);
+}
+
+.counter-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--color-navy);
+    padding: 2px 6px;
+    line-height: 1;
+    transition: color var(--transition);
+}
+
+.counter-btn:hover {
+    color: var(--color-navy-mid);
+}
+
+.counter-control input[type="number"] {
+    width: 32px;
+    border: none;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    background: transparent;
+    text-align: center;
+    font-size: 14px;
+    padding: 3px 0;
+}
+
+.counter-control input[type="number"]::-webkit-outer-spin-button,
+.counter-control input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* Таблиця номерів */
+.rooms-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.rooms-table th,
+.rooms-table td {
+    padding: 12px 16px;
+    border: 3px solid var(--color-lavender);
+    vertical-align: middle;
+}
+
+.rooms-table th {
+    background-color: var(--color-navy-mid);
+    color: var(--color-white);
+    font-weight: bold;
+    text-align: left;
+}
+
+.rooms-table td {
+    background-color: var(--color-white);
+}
+
+.rooms-table td:first-child,
+.rooms-table td:last-child {
+    text-align: center;
+}
+
+.room-capacity-icons {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--color-navy);
+}
+
+.room-type-name {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.room-type-desc {
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.room-bed-icon {
+    font-size: 20px;
+}
+
+.btn-show-price {
+    background-color: #687BC0;
+    color: var(--color-white);
+    border: none;
+    padding: 9px 20px;
+    cursor: pointer;
+    transition: background-color var(--transition);
+    white-space: nowrap;
+}
+
+.btn-show-price:hover {
+    background-color: var(--color-navy);
+}

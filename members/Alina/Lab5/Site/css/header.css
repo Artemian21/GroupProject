@@ -1,0 +1,135 @@
+.header {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Логотип */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 36px;
+    width: auto;
+}
+
+/* Навігаційне меню */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.nav-menu > li {
+    padding: 0 22px;
+    border-right: 1px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    min-height: 32px;
+}
+
+.nav-menu > li:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.nav-menu a {
+    color: var(--color-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: opacity var(--transition);
+    white-space: nowrap;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    opacity: 0.7;
+}
+
+/* Мова */
+.lang-select {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.lang-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-white);
+    cursor: pointer;
+    padding: 6px 0;
+    user-select: none;
+}
+
+.lang-trigger img {
+    width: 26px;
+    height: auto;
+}
+
+.lang-trigger .arrow {
+    font-size: 20px;
+    transition: transform var(--transition);
+    display: inline-block;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background-color: var(--color-navy);
+    list-style: none;
+    padding: 8px 0;
+    min-width: 90px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition);
+    z-index: 200;
+}
+
+.lang-select:hover .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.lang-select:hover .arrow {
+    transform: rotate(180deg);
+}
+
+.nav-menu .lang-dropdown li {
+    padding: 0;
+    border-right: none;
+    min-height: unset;
+    width: 100%;
+    display: block;
+}
+
+.nav-menu .lang-dropdown a {
+    display: block;
+    padding: 8px 16px;
+    text-align: center;
+    transition: background-color var(--transition), color var(--transition);
+    opacity: 1;
+}
+
+.nav-menu .lang-dropdown a:hover {
+    background-color: var(--color-white);
+    color: var(--color-navy);
+}

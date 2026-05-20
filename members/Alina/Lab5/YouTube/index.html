@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube</title>
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png" />
+
+  <!-- Шрифт Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Іконки Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Іконки Material Symbols -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <!-- Іконки Font Awesome -->
+  <script src="https://kit.fontawesome.com/8407dc7467.js" crossorigin="anonymous"></script>
+
+  <!-- Стилі -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/header.css" />
+  <link rel="stylesheet" href="styles/sidebar.css" />
+  <link rel="stylesheet" href="styles/content.css" />
+</head>
+<body>
+
+<header>
+
+  <div class="header-left">
+    <button class="hamburger" id="menuToggle" title="Меню">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <a href="#" class="logo">
+      <img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube" width="30" height="30">
+      <span class="logo-text">YouTube</span>
+      <sup class="logo-ua">UA</sup>
+    </a>
+
+  </div>
+
+  <div class="header-center">
+    <div class="search-bar">
+      <div class="search-input-wrapper">
+        <input type="text" id="searchInput" placeholder="Введіть запит">
+        <i class="fa-regular fa-keyboard keyboard-icon" title="Екранна клавіатура"></i>
+      </div>
+      <button class="search-btn" id="searchBtn" title="Пошук">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+    <button class="mic-btn" title="Голосовий пошук">
+      <i class="bi bi-mic"></i>
+    </button>
+  </div>
+
+  <div class="header-right">
+
+    <button class="create-btn" title="Створити">
+      <i class="fa-solid fa-plus"></i>
+      <span>Створити</span>
+    </button>
+
+    <div class="notification-wrapper">
+      <button class="icon-btn" title="Сповіщення">
+        <span class="material-symbols-outlined">notifications</span>
+      </button>
+      <span class="notification-badge">9+</span>
+    </div>
+
+    <img src="img/profile.jpg" alt="Профіль" class="profile-pic" title="Акаунт">
+
+  </div>
+</header>
+
+<div class="layout">
+  <aside id="sidebar">
+
+    <div class="sidebar-section">
+      <a href="#" class="sidebar-link active">
+        <i class="bi bi-house-door-fill icon"></i>
+        <span class="label">Головна</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <img width="30" height="30" src="https://img.icons8.com/?size=100&id=ajczeHCWXbyR&format=png&color=ffffff" alt="Shorts">
+        <span class="label">Shorts</span>
+      </a>
+      <!-- Пункт "Ви" — видимий тільки в міні-режимі -->
+      <a href="#" class="sidebar-link mini-only">
+        <i class="bi bi-person-video icon"></i>
+        <span class="label">Ви</span>
+      </a>
+    </div>
+
+    <div class="sidebar-section">
+      <a href="#" class="sidebar-header-link">
+        <span class="label">Підписки</span>
+        <i class="bi bi-chevron-right icon-small"></i>
+      </a>
+      <a href="#" class="sidebar-link">
+        <img src="img/sub1.png" alt="" class="sub-img">
+        <span class="label">Aelcrit Blender Craftsman</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <img src="img/sub2.png" alt="" class="sub-img">
+        <span class="label">GoIT</span>
+        <span class="new-dot"></span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <img src="img/sub3.png" alt="" class="sub-img">
+        <span class="label">Roseate Music</span>
+        <span class="live-icon"><i class="bi bi-broadcast"></i></span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <img src="img/sub4.png" alt="" class="sub-img">
+        <span class="label">fkmymesh</span>
+        <span class="new-dot"></span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-chevron-down icon"></i>
+        <span class="label">Розгорнути</span>
+      </a>
+    </div>
+
+    <div class="sidebar-section">
+      <a href="#" class="sidebar-header-link">
+        <span class="label">Ви</span>
+        <i class="bi bi-chevron-right icon-small"></i>
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-person-square icon"></i>
+        <span class="label">Мій канал</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-clock-history icon"></i>
+        <span class="label">Історія</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-music-note-list icon"></i>
+        <span class="label">Плейлисти</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-clock icon"></i>
+        <span class="label">Переглянути пізніше</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-hand-thumbs-up icon"></i>
+        <span class="label">Вподобані відео</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-play-btn icon"></i>
+        <span class="label">Ваші відео</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-download icon"></i>
+        <span class="label">Завантаження</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-chevron-down icon"></i>
+        <span class="label">Розгорнути</span>
+      </a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Навігатор</div>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-music-note-beamed icon"></i>
+        <span class="label">Музика</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-film icon"></i>
+        <span class="label">Фільми</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-controller icon"></i>
+        <span class="label">Відеоігри</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-chevron-down icon"></i>
+        <span class="label">Розгорнути</span>
+      </a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Інші можливості</div>
+      <a href="#" class="sidebar-link">
+        <img width="30" height="30" src="https://img.icons8.com/?size=100&id=19318&format=png&color=000000" alt="YouTube Premium">
+        <span class="label">YouTube Premium</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <img width="30" height="30" src="https://img.icons8.com/?size=100&id=6zadLh4Adjrp&format=png&color=000000" alt="YouTube Music">
+        <span class="label">YouTube Music</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <img width="30" height="30" src="https://img.icons8.com/?size=100&id=Q74wy11KE5zq&format=png&color=000000" alt="YouTube Kids">
+        <span class="label">YouTube Дітям</span>
+      </a>
+    </div>
+
+    <div class="sidebar-section">
+      <a href="#" class="sidebar-link">
+        <i class="bi bi-flag icon"></i>
+        <span class="label">Скарги</span>
+      </a>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="footer-links">
+        <a href="https://about.youtube/">Про сервіс</a>
+        <a href="https://blog.youtube/">Преса</a>
+        <a href="https://www.youtube.com/howyoutubeworks/copyright/">Авторські права</a>
+        <a href="https://www.youtube.com/t/contact_us/">Зв'язатися з нами</a>
+        <a href="https://www.youtube.com/creators/">Авторам</a>
+        <a href="https://business.google.com/ua/ad-solutions/youtube-ads/">Рекламодавцям</a>
+        <a href="https://developers.google.com/youtube?hl=ru">Розробникам</a>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/t/terms">Умови користування</a>
+        <a href="https://policies.google.com/privacy?hl=ru">Конфіденційність</a>
+        <a href="https://www.youtube.com/howyoutubeworks/our-policies/">Правила й безпека</a>
+        <a href="https://www.youtube.com/howyoutubeworks/">Як працює YouTube</a>
+        <a href="https://www.youtube.com/new">Тестування нових функцій</a>
+      </div>
+      <div class="copyright">© 2026 Google LLC</div>
+    </div>
+
+  </aside>
+
+  <main>
+
+    <div class="chips-bar" id="chipsBar">
+
+      <!-- Кнопка -->
+      <button class="chips-nav-btn hidden" id="chipsPrev" title="Назад">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+
+      <div class="chips-scroll" id="chipsScroll">
+        <button class="chip active">Усі</button>
+        <button class="chip">Музика</button>
+        <button class="chip">Джеми</button>
+        <button class="chip">Подкасти</button>
+        <button class="chip">Відеоігри</button>
+        <button class="chip">Новини</button>
+        <button class="chip">Зараз у ефірі</button>
+        <button class="chip">Скетч-шоу</button>
+        <button class="chip">Мультфільми</button>
+        <button class="chip">Реп</button>
+        <button class="chip">Спорт</button>
+        <button class="chip">Кулінарія</button>
+        <button class="chip">Технології</button>
+        <button class="chip">Нове для вас</button>
+      </div>
+
+      <!-- Кнопка прокрутки фільтрів вправо -->
+      <button class="chips-nav-btn" id="chipsNext" title="Вперед">
+        <span class="material-symbols-outlined">chevron_right</span>
+      </button>
+
+    </div>
+
+
+    <!-- Сітка рекомендованих відео -->
+    <div class="video-grid">
+
+      <!-- Відео -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <iframe src="https://www.youtube.com/embed/_eK26atXTds?si=d_1nEdgZF1YgrxO7" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="avatar">
+            <img src="img/Juniper Dev.png" alt="" class="profile-pic">
+          </div>
+          <div class="video-info">
+            <div class="video-title">Everything You Need To Start Making Games (As A Beginner)</div>
+            <div class="channel-name">Juniper Dev</div>
+            <div class="video-stats">1,8 млн переглядів · 1 рік тому</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Відео -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <iframe src="https://www.youtube.com/embed/iePx9bU2IF0?si=GR_ODod43sbbVtv_" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="avatar">
+            <img src="img/Book.png" alt="" class="profile-pic">
+          </div>
+          <div class="video-info">
+            <div class="video-title">ТИГРОЛОВИ Іван Багряний #аудіокнига #аудіокнигиукраїнською #багряний</div>
+            <div class="channel-name">На канапі - Аудіокниги українською!</div>
+            <div class="video-stats">3.1 тис. переглядів · 2 роки тому</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Відео -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <iframe src="https://www.youtube.com/embed/S0lx-sIjbHA?si=VVK9acUCAORoDJcF" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="avatar">
+            <img src="img/EMPIRE PHONK.png" alt="" class="profile-pic">
+          </div>
+          <div class="video-info">
+            <div class="video-title">AURA = ♾️ | 1 HOUR VIRAL AURA MUSIC PLAYLIST 2026 🔥 TRENDING PHONK HITS</div>
+            <div class="channel-name">EMPIRE PHONK</div>
+            <div class="video-stats">244 тис. переглядів · 3 дні тому</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Shorts -->
+    <div class="section-title">
+      <img src="https://img.icons8.com/color/48/youtube-shorts.png" alt="Shorts" width="22" height="22">
+      Shorts
+    </div>
+
+    <!-- рядок Shorts -->
+    <div class="shorts-row">
+
+      <!-- Short -->
+      <div class="short-card">
+        <iframe src="https://www.youtube.com/embed/ca_EESpgAPc" allowfullscreen loading="lazy"></iframe>
+        <div class="short-meta">
+          <p class="short-title">Ranking Funniest Cat Reactions</p>
+          <p class="short-views">707 тис. переглядів</p>
+        </div>
+      </div>
+
+      <!-- Short -->
+      <div class="short-card">
+        <iframe src="https://www.youtube.com/embed/QR-0lCAwVCg" allowfullscreen loading="lazy"></iframe>
+        <div class="short-meta">
+          <p class="short-title">When cats interrupt classes, everyone gets distracted</p>
+          <p class="short-views">11 млн переглядів</p>
+        </div>
+      </div>
+
+      <!-- Short -->
+      <div class="short-card">
+        <iframe src="https://www.youtube.com/embed/gAc3oMgdDvk" allowfullscreen loading="lazy"></iframe>
+        <div class="short-meta">
+          <p class="short-title">Best Dog Compilation #thebest #dogshorts #dogsofyoutube #funnymoments</p>
+          <p class="short-views">10 млн переглядів</p>
+        </div>
+      </div>
+
+      <!-- Short -->
+      <div class="short-card">
+        <iframe src="https://www.youtube.com/embed/YzWv4Ve_vtU" allowfullscreen loading="lazy"></iframe>
+        <div class="short-meta">
+          <p class="short-title">Hilarious Neighbor Dog Moments #dog #NeighborsDog #funnydogs</p>
+          <p class="short-views">15 млн переглядів</p>
+        </div>
+      </div>
+
+      <!-- Short -->
+      <div class="short-card">
+        <iframe src="https://www.youtube.com/embed/3FV1b7ugw7w" allowfullscreen loading="lazy"></iframe>
+        <div class="short-meta">
+          <p class="short-title">Ranking the Best Baby Responses Ever</p>
+          <p class="short-views">25 млн переглядів</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Друга сітка відео -->
+    <div class="video-grid">
+
+      <!-- Відео -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <iframe src="https://www.youtube.com/embed/_eK26atXTds?si=d_1nEdgZF1YgrxO7" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="avatar">
+            <img src="img/Juniper Dev.png" alt="" class="profile-pic">
+          </div>
+          <div class="video-info">
+            <div class="video-title">Everything You Need To Start Making Games (As A Beginner)</div>
+            <div class="channel-name">Juniper Dev</div>
+            <div class="video-stats">1,8 млн переглядів · 1 рік тому</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Відео -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <iframe src="https://www.youtube.com/embed/iePx9bU2IF0?si=GR_ODod43sbbVtv_" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="avatar">
+            <img src="img/Book.png" alt="" class="profile-pic">
+          </div>
+          <div class="video-info">
+            <div class="video-title">ТИГРОЛОВИ Іван Багряний #аудіокнига #аудіокнигиукраїнською #багряний</div>
+            <div class="channel-name">На канапі - Аудіокниги українською!</div>
+            <div class="video-stats">3.1 тис. переглядів · 2 роки тому</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Відео -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <iframe src="https://www.youtube.com/embed/S0lx-sIjbHA?si=VVK9acUCAORoDJcF" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="avatar">
+            <img src="img/EMPIRE PHONK.png" alt="" class="profile-pic">
+          </div>
+          <div class="video-info">
+            <div class="video-title">AURA = ♾️ | 1 HOUR VIRAL AURA MUSIC PLAYLIST 2026 🔥 TRENDING PHONK HITS</div>
+            <div class="channel-name">EMPIRE PHONK</div>
+            <div class="video-stats">244 тис. переглядів · 3 дні тому</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

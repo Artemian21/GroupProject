@@ -1,0 +1,175 @@
+/* Фільтр місцерозташування */
+.location-filter-wrapper {
+    position: relative;
+}
+
+.location-filter {
+    background-color: var(--color-info-bg);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: background-color var(--transition);
+    user-select: none;
+    border: 1px solid #ccc;
+}
+
+.location-filter:hover,
+.location-filter.open {
+    background-color: #d4d4d4;
+}
+
+.location-filter > span {
+    font-size: 15px;
+}
+
+.filter-arrow {
+    position: absolute;
+    right: 20px;
+    font-size: 13px;
+    transition: transform var(--transition);
+}
+
+.location-filter.open .filter-arrow {
+    transform: rotate(180deg);
+}
+
+/* Спадний список */
+.location-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: none;
+    background-color: var(--color-location-dropdown-bg);
+    border: 1px solid #ccc;
+    border-top: none;
+    list-style: none;
+}
+
+.location-dropdown.visible {
+    display: block;
+}
+
+.location-dropdown li {
+    padding: 12px 20px;
+    font-style: italic;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color var(--transition);
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.location-dropdown li:last-child {
+    border-bottom: none;
+}
+
+.location-dropdown li:hover,
+.location-dropdown li.selected {
+    background-color: var(--color-lavender);
+    color: var(--color-navy);
+    font-weight: bold;
+}
+
+/* Список карток */
+.booking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Картка */
+.booking-card {
+    background-color: var(--color-card-bg);
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    position: relative;
+    transition: box-shadow var(--transition);
+}
+
+.booking-card.hidden {
+    display: none;
+}
+
+/* Фото */
+.booking-img {
+    width: 310px;
+    height: 210px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Зірочка */
+.star-icon {
+    position: absolute;
+    right: 10px;
+    color: var(--color-white);
+    font-size: 30px;
+    z-index: 2;
+    cursor: pointer;
+    transition: color var(--transition), transform var(--transition);
+}
+
+.star-icon:hover,
+.star-icon.active {
+    color: #f5c518;
+    transform: scale(1.15);
+}
+
+/* Інфо-блок */
+.booking-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.booking-title-wrapper {
+    width: 100%;
+    border-bottom: 2px solid var(--color-white);
+    margin-bottom: 10px;
+}
+
+.booking-title-wrapper h3 {
+    font-size: 24px;
+    font-style: italic;
+    color: var(--color-navy-mid);
+    font-weight: 700;
+}
+
+.booking-info p {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--color-text-mid);
+    text-align: center;
+    background-color: var(--color-info-bg);
+    padding: 45px 10px;
+}
+
+/* Кнопка "Детальніше" */
+.btn-details {
+    position: absolute;
+    bottom: -8px;
+    right: -50px;
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 28px;
+    border-radius: var(--radius-btn);
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color var(--transition);
+}
+
+.btn-details:hover {
+    background-color: #1a2038;
+}

@@ -1,0 +1,179 @@
+.hero {
+    background-image: url('../img/Photo1.png');
+    background-size: cover;
+    background-position: center;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+    text-align: center;
+    border-radius: 2px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+/* Слайдер */
+.slider-section {
+    position: relative;
+    background-image: url('../img/Photo2.png');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+.slider-info-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 75%;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px 40px 20px;
+}
+
+.slider-info-box p {
+    font-size: 13px;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: var(--color-text);
+}
+
+.btn-view {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 26px;
+    border-radius: var(--radius-btn);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+.btn-view:hover {
+    background-color: #1a2038;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #215023;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+.dot.active {
+    background-color: #A5BB4F;
+}
+
+/* Інфо */
+.info-section {
+    display: flex;
+    background-color: var(--color-navy);
+    padding: 20px 30px;
+    gap: 0;
+}
+
+.info-image {
+    flex: 1;
+    min-height: 250px;
+    background-image: url('../img/Photo3.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.info-text {
+    flex: 1;
+    background-color: var(--color-info-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* Форма */
+.contact-form-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form {
+    background-color: var(--color-form-bg);
+    padding: 30px;
+    width: 360px;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 22px;
+    font-size: 20px;
+    color: var(--color-navy);
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    background-color: var(--color-white);
+    transition: border-color var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-navy-mid);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--color-navy-mid);
+    color: var(--color-white);
+    border: none;
+    padding: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+.btn-submit:hover {
+    background-color: var(--color-navy);
+}

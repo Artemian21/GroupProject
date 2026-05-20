@@ -1,0 +1,34 @@
+.contacts-block {
+    padding: 40px 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 30px 20px;
+}
+
+.contact-item h3 {
+    border-bottom: 2px solid var(--color-navy-mid);
+    display: inline-block;
+}
+
+.contact-item p {
+    line-height: 1.7;
+}
+
+.contact-address {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.contact-map {
+    grid-column: 2 / 4;
+    grid-row: 2;
+}
+
+.map-embed {
+    width: 80%;
+    height: 200px;
+    border: none;
+    display: block;
+    border-radius: 10%;
+}

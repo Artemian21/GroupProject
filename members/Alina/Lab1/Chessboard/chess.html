@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Шахова дошка</title>
+    <link rel="stylesheet" href="../../../../css/style.css">
+</head>
+<body>
+    <div id="header-placeholder" data-root="../../../../"></div>
+
+    <main class="container chess-page">
+        <h1 class="text-center">Шахова дошка</h1>
+        
+        <div class="chess-game-container">
+            <h2 id="status-bar" class="status-bar text-center">Хід білих</h2>
+
+            <div class="board-wrapper">
+                <div class="coords-y">
+                    <span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span>
+                </div>
+                <div>
+                    <table id="board-table" class="chess-board-grid"></table>
+                    <div class="coords-x">
+                        <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chess-controls">
+                <button onclick="resetBoard()">Нова гра</button>
+                <button onclick="undoMove()">Скасувати хід</button>
+            </div>
+
+            <div class="chess-history">
+                <strong>Історія ходів: </strong>
+                <div id="move-list" class="move-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const UNICODE = {
+            wK:'♔', wQ:'♕', wR:'♖', wB:'♗', wN:'♘', wP:'♙',
+            bK:'♚', bQ:'♛', bR:'♜', bB:'♝', bN:'♞', bP:'♟'
+        };
+
+        const PIECES_LIST = [
+            'bR','bN','bB','bQ','bK','bB','bN','bR',
+            'bP','bP','bP','bP','bP','bP','bP','bP',
+            'wP','wP','wP','wP','wP','wP','wP','wP',
+            'wR','wN','wB','wQ','wK','wB','wN','wR'
+        ];
+
+        let board, turn, selected, history, moveList;
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function generateRandomValidBoard() {
+            let tempBoard;
+            let isValid = false;
+            while (!isValid) {
+                const flatBoard = new Array(64).fill(null);
+                const shuffledPieces = shuffle([...PIECES_LIST]);
+                const positions = shuffle([...Array(64).keys()]);
+                for (let i = 0; i < shuffledPieces.length; i++) {
+                    flatBoard[positions[i]] = shuffledPieces[i];
+                }
+                tempBoard = [];
+                for (let i = 0; i < 8; i++) {
+                    tempBoard.push(flatBoard.slice(i * 8, (i + 1) * 8));
+                }
+                if (!inCheck(tempBoard, 'w') && !inCheck(tempBoard, 'b') && hasAnyLegal(tempBoard, 'w')) {
+                    isValid = true;
+                }
+            }
+            return tempBoard;
+        }
+
+        function initState() {
+            board = generateRandomValidBoard();
+            turn = 'w';
+            selected = null;
+            history = [];
+            moveList = [];
+        }
+
+        const inBounds = (r,c) => r>=0&&r<8&&c>=0&&c<8;
+        const color = p => p ? p[0] : null;
+        const type  = p => p ? p[1] : null;
+        const ally  = (p,t) => p && color(p) === t;
+        const enemy = (p,t) => p && color(p) !== t;
+        const coord = (r,c) => 'abcdefgh'[c] + (8-r);
+
+        function kingPos(b, t) {
+            for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(b[r][c]===t+'K') return [r,c];
+            return null;
+        }
+
+        function isAttacked(b, r, c, byColor) {
+            const pd = byColor==='w'?1:-1;
+            for(const dc of [-1,1]) {
+                const rr=r+pd, cc=c+dc;
+                if(inBounds(rr,cc) && b[rr][cc]===byColor+'P') return true;
+            }
+            for(const [dr,dc] of [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]]) {
+                const rr=r+dr,cc=c+dc;
+                if(inBounds(rr,cc)&&b[rr][cc]===byColor+'N') return true;
+            }
+            for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++) {
+                if(!dr&&!dc) continue;
+                const rr=r+dr,cc=c+dc;
+                if(inBounds(rr,cc)&&b[rr][cc]===byColor+'K') return true;
+            }
+            for(const [dr,dc] of [[-1,0],[1,0],[0,-1],[0,1]]) {
+                let rr=r+dr,cc=c+dc;
+                while(inBounds(rr,cc)) {
+                    const p=b[rr][cc];
+                    if(p) { if(p===byColor+'R'||p===byColor+'Q') return true; break; }
+                    rr+=dr; cc+=dc;
+                }
+            }
+            for(const [dr,dc] of [[-1,-1],[-1,1],[1,-1],[1,1]]) {
+                let rr=r+dr,cc=c+dc;
+                while(inBounds(rr,cc)) {
+                    const p=b[rr][cc];
+                    if(p) { if(p===byColor+'B'||p===byColor+'Q') return true; break; }
+                    rr+=dr; cc+=dc;
+                }
+            }
+            return false;
+        }
+
+        function inCheck(b, t) {
+            const kp = kingPos(b,t);
+            return kp && isAttacked(b, kp[0], kp[1], t==='w'?'b':'w');
+        }
+
+        function pseudoMoves(b, r, c) {
+            const p = b[r][c]; if(!p) return [];
+            const t = color(p), pt = type(p);
+            const moves = [];
+            const add = (tr,tc) => { if(inBounds(tr,tc)&&!ally(b[tr][tc],t)) moves.push([tr,tc]); };
+            const slide = dirs => {
+                for(const [dr,dc] of dirs) {
+                    let rr=r+dr,cc=c+dc;
+                    while(inBounds(rr,cc)) {
+                        if(ally(b[rr][cc],t)) break;
+                        moves.push([rr,cc]);
+                        if(b[rr][cc]) break;
+                        rr+=dr; cc+=dc;
+                    }
+                }
+            };
+            if(pt==='P') {
+                const dir=t==='w'?-1:1, startRow=t==='w'?6:1;
+                if(inBounds(r+dir,c)&&!b[r+dir][c]) {
+                    moves.push([r+dir,c]);
+                    if(r===startRow&&!b[r+2*dir]?.[c]) moves.push([r+2*dir,c]);
+                }
+                for(const dc of [-1,1]) {
+                    const rr=r+dir,cc=c+dc;
+                    if(inBounds(rr,cc)&&enemy(b[rr][cc],t)) moves.push([rr,cc]);
+                }
+            } else if(pt==='N') {
+                for(const [dr,dc] of [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]]) add(r+dr,c+dc);
+            } else if(pt==='B') slide([[-1,-1],[-1,1],[1,-1],[1,1]]);
+            else if(pt==='R') slide([[-1,0],[1,0],[0,-1],[0,1]]);
+            else if(pt==='Q') slide([[-1,-1],[-1,1],[1,-1],[1,1],[-1,0],[1,0],[0,-1],[0,1]]);
+            else if(pt==='K') {
+                for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++) if(dr||dc) add(r+dr,c+dc);
+            }
+            return moves;
+        }
+
+        function legalMoves(b, r, c) {
+            const t = color(b[r][c]);
+            return pseudoMoves(b,r,c).filter(([tr,tc]) => {
+                const nb = b.map(row=>[...row]);
+                nb[tr][tc]=nb[r][c]; nb[r][c]=null;
+                return !inCheck(nb,t);
+            });
+        }
+
+        function hasAnyLegal(b, t) {
+            for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(color(b[r][c])===t && legalMoves(b,r,c).length>0) return true;
+            return false;
+        }
+
+        function render() {
+            const table = document.getElementById('board-table');
+            table.innerHTML = '';
+            const validTargets = selected ? legalMoves(board, selected[0], selected[1]) : [];
+            const [kR, kC] = inCheck(board, turn) ? kingPos(board, turn) : [-1,-1];
+
+            for(let r=0; r<8; r++) {
+                const tr = document.createElement('tr');
+                for(let c=0; c<8; c++) {
+                    const td = document.createElement('td');
+                    
+                    td.classList.add((r+c)%2===0 ? 'cell-light' : 'cell-dark');
+
+                    if(selected && selected[0]===r && selected[1]===c) td.classList.add('cell-selected');
+                    if(r===kR && c===kC) td.classList.add('cell-check');
+                    if(validTargets.some(([tr,tc])=>tr===r&&tc===c)) td.classList.add('cell-target');
+                    
+                    if(board[r][c]) {
+                        const span = document.createElement('span');
+                        span.className = 'chess-piece-icon';
+                        span.textContent = UNICODE[board[r][c]];
+                        td.appendChild(span);
+                    }
+                    td.onclick = () => handleClick(r,c);
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+
+            const statusEl = document.getElementById('status-bar');
+            const check = inCheck(board, turn);
+            const anyLegal = hasAnyLegal(board, turn);
+            
+            if(!anyLegal && check) statusEl.innerHTML = '<span class="text-danger">Мат!</span>';
+            else if(!anyLegal) statusEl.innerHTML = 'Пат!';
+            else if(check) statusEl.innerHTML = '<span class="text-danger">ШАХ!</span>';
+            else statusEl.innerHTML = 'Хід ' + (turn==='w'?'білих':'чорних');
+
+            document.getElementById('move-list').textContent = moveList.join(', ');
+        }
+
+        function handleClick(r,c) {
+            if(!hasAnyLegal(board,turn)) return;
+            const p = board[r][c];
+            if(selected) {
+                const [sr,sc] = selected;
+                if(legalMoves(board,sr,sc).some(([tr,tc])=>tr===r&&tc===c)) {
+                    moveList.push(coord(sr,sc) + (board[r][c]?'x':'') + coord(r,c));
+                    history.push({ board: board.map(row=>[...row]), turn, moveList: [...moveList] });
+                    board[r][c] = board[sr][sc];
+                    board[sr][sc] = null;
+                    if((board[r][c].endsWith('P')&&(r===0||r===7))) board[r][c]=board[r][c][0]+'Q';
+                    turn = turn==='w'?'b':'w';
+                    selected = null;
+                } else {
+                    selected = (p && color(p)===turn) ? [r,c] : null;
+                }
+            } else if(p && color(p)===turn) {
+                selected = [r,c];
+            }
+            render();
+        }
+
+        function resetBoard() { initState(); render(); }
+        function undoMove() {
+            if(history.length===0) return;
+            const prev = history.pop();
+            board = prev.board; turn = prev.turn; moveList = prev.moveList;
+            selected = null; render();
+        }
+
+        initState();
+        render();
+    </script>
+    <script src="../../../../header.js"></script>
+</body>
+</html>
