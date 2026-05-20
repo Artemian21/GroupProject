@@ -7,7 +7,10 @@ const months = [
     "Вересень", "Жовтень", "Листопад", "Грудень"
 ];
 
-let currentDate = new Date();
+let currentDate = new Date(2026, 2, 1);
+
+const holidays = new Set(["3-8"]);
+const purpleDays = new Set(["3-21"]);
 
 function renderCalendar() {
     calendarBody.innerHTML = "";
@@ -50,8 +53,16 @@ function renderCalendar() {
             else {
                 cell.textContent = date;
 
+                const key = `${month + 1}-${date}`;
+
                 if (j >= 5) {
                     cell.classList.add("weekend");
+                }
+                if (holidays.has(key)) {
+                    cell.classList.add("holiday");
+                }
+                if (purpleDays.has(key)) {
+                    cell.classList.add("birthday");
                 }
 
                 const today = new Date();

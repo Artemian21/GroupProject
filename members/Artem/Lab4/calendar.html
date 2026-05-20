@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Календар</title>
-
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="calendarStyles.css">
+<link rel="stylesheet" href="calendarStyles.css">
+    <link rel="stylesheet" href="../../../css/style.css">
 </head>
 
 <body>
+    <header class="header">
+        <div class="logo">Командний проєкт</div>
+        <nav class="nav">
+            <a href="../../../index.html">Головна</a>
+        </nav>
+    </header>
 
-<header class="header">
-    <div class="logo">Командний проєкт</div>
-
-    <nav class="nav">
-        <a href="../../../index.html">Головна</a>
-    </nav>
-</header>
-
-<main class="container">
-
-    <div class="calendar-nav">
+    <main class="container">
+        <div class="lab-content">
+<div class="calendar-nav">
         <button id="prevMonth">Попередній</button>
 
         <h2 id="monthTitle"></h2>
@@ -43,10 +40,9 @@
 
         <tbody id="calendarBody"></tbody>
     </table>
+        </div>
+    </main>
 
-</main>
-
-<script src="calendar.js"></script>
-
+    <script src="calendar.js"></script>
 </body>
 </html>

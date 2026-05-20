@@ -6,25 +6,30 @@
     <link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
-    <div id="header-placeholder" data-root="../../../"></div>
+    <header class="header">
+        <div class="logo">Командний проєкт</div>
+        <nav class="nav">
+            <a href="../../../index.html">Головна</a>
+        </nav>
+    </header>
 
-    <main class="container google-page">
-        
-        <div style="display: flex; justify-content: flex-end; align-items: center; padding: 15px 20px;">
+    <main class="container">
+        <div class="lab-content google-page">
+<div class="google-topbar">
             <a href="?page=gmail" class="g-link">Gmail</a>
             <a href="?page=images" class="g-link">Зображення</a>
-            <a href="?page=menu" class="g-link" style="font-size: 18px; font-weight: bold;">⋮⋮⋮</a>
+            <a href="?page=menu" class="g-link google-apps-icon">⋮⋮⋮</a>
             <a href="?page=login" class="btn-login">Увійти</a>
         </div>
 
-        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div class="google-center">
             
-            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google" style="margin-bottom: 30px; border-radius: 0; box-shadow: none;">
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google" class="google-logo-image">
             
-            <form action="?search=google" method="get" style="width: 100%; text-align: center;">
+            <form action="?search=google" method="get" class="google-search-form">
                 <input type="text" name="q" placeholder="Пошук у Google або введіть URL">
                 
-                <div style="margin-top: 25px;">
+                <div class="google-actions">
                     <input type="submit" value="Пошук Google">
                     <input type="submit" value="Мені пощастить" formaction="?search=lucky">
                 </div>
@@ -32,10 +37,10 @@
         </div>
 
         <footer class="footer-box">
-            <div style="padding: 15px 30px; border-bottom: 1px solid #dadce0; color: #70757a; font-size: 15px;">
+            <div class="google-footer-country">
                 Україна
             </div>
-            <div style="text-align: center; padding: 15px 30px;">
+            <div class="google-footer-links">
                 <a href="?page=about" class="g-link">Про компанію</a>
                 <a href="?page=ads" class="g-link">Реклама</a>
                 <a href="?page=business" class="g-link">Бізнес</a>
@@ -43,8 +48,7 @@
                 <a href="?page=terms" class="g-link">Умови</a>
             </div>
         </footer>
+        </div>
     </main>
-
-    <script src="../../../header.js"></script>
 </body>
 </html>
