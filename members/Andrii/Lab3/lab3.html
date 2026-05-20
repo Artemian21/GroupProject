@@ -2,110 +2,125 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Hotel Booking</title>
+    <title>Hotel Booking - Андрій</title>
+    <link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
+    <div id="header-placeholder" data-root="../../../"></div>
 
-<table align="center">
-    <tr>
-        <td><img src="img1.jpg" alt="Room 1" width="200"></td>
-        <td width="150"></td>
-        <td><img src="img2.jpg" alt="Room 2" width="200"></td>
-        <td width="150"></td>
-        <td><img src="img3.jpg" alt="Room 3" width="200"></td>
-    </tr>
-</table>
+    <main class="container">
+        
+        <div class="gallery gallery-md">
+            <img src="img1.jpg" alt="Room 1">
+            <img src="img2.jpg" alt="Room 2">
+            <img src="img3.jpg" alt="Room 3">
+        </div>
 
-<h1 align="center">Hotel Booking</h1>
-<p align="center">Special discounts for "Програмування для Інтернет" students</p>
+        <div class="booking-form">
+            <h1 class="text-center mt-0">Hotel Booking</h1>
+            <p class="text-center text-muted mt-n15 mb-30">Special discounts for "Програмування для Інтернет" students</p>
 
-<form>
+            <form>
+                <div class="form-row">
+                    <div>
+                        <label>Name <span class="text-danger">*</span></label>
+                        <div class="form-flex">
+                            <div class="form-flex-1"><input type="text" name="first_name" placeholder="First Name" required></div>
+                            <div class="form-flex-1"><input type="text" name="last_name" placeholder="Last Name" required></div>
+                        </div>
+                    </div>
+                    <div>
+                        <label>E-mail <span class="text-danger">*</span></label>
+                        <input type="email" name="email" placeholder="example@mail.com" required>
+                    </div>
+                </div>
 
-    <table>
+                <div class="form-row">
+                    <div>
+                        <label>Room Type</label>
+                        <select name="room_type">
+                            <option>Single Room</option>
+                            <option>Double Room</option>
+                            <option>Luxury Room</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Number of Guests <span class="text-danger">*</span></label>
+                        <input type="number" name="guests" min="1" max="10" required>
+                    </div>
+                </div>
 
-    <tr>
-        <td>
-            <h3>Name *</h3>
-            First Name: <input type="text" name="first_name" required><br>
-            Last Name: <input type="text" name="last_name" required>
-        </td>
+                <div class="form-row">
+                    <div>
+                        <label>Arrival Date & Time <span class="text-danger">*</span></label>
+                        <div class="form-flex">
+                            <div class="form-flex-2"><input type="date" name="arrival_date" required></div>
+                            <div class="form-flex-1"><input type="time" name="arrival_time" required></div>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Departure Date <span class="text-danger">*</span></label>
+                        <div class="form-flex">
+                            <div class="form-flex-1">
+                                <select name="month">
+                                    <option>Month</option><option>January</option><option>February</option><option>March</option>
+                                </select>
+                            </div>
+                            <div class="form-flex-1">
+                                <select name="day">
+                                    <option>Day</option><option>1</option><option>2</option><option>3</option>
+                                </select>
+                            </div>
+                            <div class="form-flex-1">
+                                <select name="year">
+                                    <option>Year</option><option>2025</option><option>2026</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <td width="50"></td>
+                <div class="form-row">
+                    <div>
+                        <label>Free Pickup? <span class="text-danger">*</span></label>
+                        <div class="check-radio-group">
+                            <label class="check-radio-label">
+                                <input type="radio" name="pickup" value="yes"> Yes Please! - Pick me up on arrival
+                            </label>
+                            <label class="check-radio-label">
+                                <input type="radio" name="pickup" value="no"> No Thanks - I'll make my own way there
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Flight Number</label>
+                        <input type="text" name="flight">
+                    </div>
+                </div>
 
-        <td>
-            <h3>E-mail *</h3>
-            <input type="email" name="email" required>
-        </td>
-    </tr>
+                <div class="mb-20">
+                    <label>Meals <span class="text-danger">*</span></label>
+                    <div class="check-radio-group row">
+                        <label class="check-radio-label"><input type="checkbox" name="meal" value="breakfast"> Breakfast</label>
+                        <label class="check-radio-label"><input type="checkbox" name="meal" value="lunch"> Lunch</label>
+                        <label class="check-radio-label"><input type="checkbox" name="meal" value="tea"> Afternoon Tea</label>
+                        <label class="check-radio-label"><input type="checkbox" name="meal" value="dinner"> Dinner</label>
+                    </div>
+                </div>
 
-    <tr>
-        <td>
-            <h3>Room Type</h3>
-            <select name="room_type">
-                <option>Single Room</option>
-                <option>Double Room</option>
-                <option>Luxury Room</option>
-            </select>
-        </td>
+                <div class="mb-30">
+                    <label>Special Requests</label>
+                    <textarea name="requests" rows="4"></textarea>
+                </div>
 
-        <td></td>
+                <div class="text-center">
+                    <input type="submit" value="Submit" class="btn px-30">
+                </div>
 
-        <td>
-            <h3>Number of Guests *</h3>
-            <input type="number" name="guests" min="1" max="10" required>
-        </td>
-    </tr>
+            </form>
+        </div>
+    </main>
 
-    </table>
-
-    <h3>Arrival Date & Time *</h3>
-    <input type="date" name="arrival_date" required>
-    <input type="time" name="arrival_time" required>
-
-    <h3>Departure Date *</h3>
-    Month:
-    <select name="month">
-        <option>Month</option>
-        <option>January</option>
-        <option>February</option>
-        <option>March</option>
-    </select>
-
-    Day:
-    <select name="day">
-        <option>Day</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-    </select>
-
-    Year:
-    <select name="year">
-        <option>Year</option>
-        <option>2025</option>
-        <option>2026</option>
-    </select>
-
-    <h3>Free Pickup? *</h3>
-    <input type="radio" name="pickup" value="yes"> Yes Please! - Pick me up on arrival<br>
-    <input type="radio" name="pickup" value="no"> No Thanks - I'll make my own way there
-
-    <h3>Flight Number</h3>
-    <input type="text" name="flight">
-
-    <h3>Meals *</h3>
-    <input type="checkbox" name="meal" value="breakfast"> Breakfast<br>
-    <input type="checkbox" name="meal" value="lunch"> Lunch<br>
-    <input type="checkbox" name="meal" value="tea"> Afternoon Tea<br>
-    <input type="checkbox" name="meal" value="dinner"> Dinner
-
-    <h3>Special Requests</h3>
-    <textarea name="requests" rows="5" cols="40"></textarea>
-
-    <br><br>
-    <input type="submit" value="Submit">
-
-</form>
-
+    <script src="../../../header.js"></script>
 </body>
 </html>

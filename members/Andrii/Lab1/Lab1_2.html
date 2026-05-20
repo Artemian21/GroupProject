@@ -1,125 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
-<meta charset="UTF-8">
-<title>Шахова дошка</title>
+    <meta charset="UTF-8">
+    <title>Шахова дошка</title>
+    <link rel="stylesheet" href="../../../css/style.css">
 </head>
-
 <body>
+    <div id="header-placeholder" data-root="../../../"></div>
 
-<h1>Шахова дошка</h1>
+    <main class="container chess-page">
+        <h1 class="text-center">Шахова дошка</h1>
 
-<table border="1" cellpadding="10">
+        <table class="chess-table theme-minimal">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                    <th>F</th>
+                    <th>G</th>
+                    <th>H</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>8</th>
+                    <td class="cell-light">♜</td><td class="cell-dark">♞</td><td class="cell-light">♝</td><td class="cell-dark">♛</td>
+                    <td class="cell-light">♚</td><td class="cell-dark">♝</td><td class="cell-light">♞</td><td class="cell-dark">♜</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td class="cell-dark">♟</td><td class="cell-light">♟</td><td class="cell-dark">♟</td><td class="cell-light">♟</td>
+                    <td class="cell-dark"></td><td class="cell-light">♟</td><td class="cell-dark">♟</td><td class="cell-light">♟</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td class="cell-light"></td><td class="cell-dark"></td><td class="cell-light"></td><td class="cell-dark"></td>
+                    <td class="cell-light">♟</td><td class="cell-dark"></td><td class="cell-light"></td><td class="cell-dark"></td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td class="cell-dark"></td><td class="cell-light"></td><td class="cell-dark"></td><td class="cell-light"></td>
+                    <td class="cell-dark">♙</td><td class="cell-light"></td><td class="cell-dark"></td><td class="cell-light"></td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td class="cell-light"></td><td class="cell-dark"></td><td class="cell-light"></td><td class="cell-dark">♘</td>
+                    <td class="cell-light"></td><td class="cell-dark"></td><td class="cell-light"></td><td class="cell-dark"></td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td class="cell-dark"></td><td class="cell-light"></td><td class="cell-dark"></td><td class="cell-light"></td>
+                    <td class="cell-dark"></td><td class="cell-light">♗</td><td class="cell-dark"></td><td class="cell-light"></td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td class="cell-light">♙</td><td class="cell-dark">♙</td><td class="cell-light">♙</td><td class="cell-dark">♙</td>
+                    <td class="cell-light"></td><td class="cell-dark">♙</td><td class="cell-light">♙</td><td class="cell-dark">♙</td>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td class="cell-dark">♖</td><td class="cell-light"></td><td class="cell-dark">♗</td><td class="cell-light">♕</td>
+                    <td class="cell-dark">♔</td><td class="cell-light"></td><td class="cell-dark">♘</td><td class="cell-light">♖</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 
-<tr>
-<th></th>
-<th>A</th>
-<th>B</th>
-<th>C</th>
-<th>D</th>
-<th>E</th>
-<th>F</th>
-<th>G</th>
-<th>H</th>
-</tr>
-
-<tr>
-<th>8</th>
-<td bgcolor="white">♜</td>
-<td bgcolor="gray">♞</td>
-<td bgcolor="white">♝</td>
-<td bgcolor="gray">♛</td>
-<td bgcolor="white">♚</td>
-<td bgcolor="gray">♝</td>
-<td bgcolor="white">♞</td>
-<td bgcolor="gray">♜</td>
-</tr>
-
-<tr>
-<th>7</th>
-<td bgcolor="gray">♟</td>
-<td bgcolor="white">♟</td>
-<td bgcolor="gray">♟</td>
-<td bgcolor="white">♟</td>
-<td bgcolor="gray"></td>
-<td bgcolor="white">♟</td>
-<td bgcolor="gray">♟</td>
-<td bgcolor="white">♟</td>
-</tr>
-
-<tr>
-<th>6</th>
-<td bgcolor="white"></td>
-<td bgcolor="gray"></td>
-<td bgcolor="white"></td>
-<td bgcolor="gray"></td>
-<td bgcolor="white">♟</td>
-<td bgcolor="gray"></td>
-<td bgcolor="white"></td>
-<td bgcolor="gray"></td>
-</tr>
-
-<tr>
-<th>5</th>
-<td bgcolor="gray"></td>
-<td bgcolor="white"></td>
-<td bgcolor="gray"></td>
-<td bgcolor="white"></td>
-<td bgcolor="gray">♙</td>
-<td bgcolor="white"></td>
-<td bgcolor="gray"></td>
-<td bgcolor="white"></td>
-</tr>
-
-<tr>
-<th>4</th>
-<td bgcolor="white"></td>
-<td bgcolor="gray"></td>
-<td bgcolor="white"></td>
-<td bgcolor="gray">♘</td>
-<td bgcolor="white"></td>
-<td bgcolor="gray"></td>
-<td bgcolor="white"></td>
-<td bgcolor="gray"></td>
-</tr>
-
-<tr>
-<th>3</th>
-<td bgcolor="gray"></td>
-<td bgcolor="white"></td>
-<td bgcolor="gray"></td>
-<td bgcolor="white"></td>
-<td bgcolor="gray"></td>
-<td bgcolor="white">♗</td>
-<td bgcolor="gray"></td>
-<td bgcolor="white"></td>
-</tr>
-
-<tr>
-<th>2</th>
-<td bgcolor="white">♙</td>
-<td bgcolor="gray">♙</td>
-<td bgcolor="white">♙</td>
-<td bgcolor="gray">♙</td>
-<td bgcolor="white"></td>
-<td bgcolor="gray">♙</td>
-<td bgcolor="white">♙</td>
-<td bgcolor="gray">♙</td>
-</tr>
-
-<tr>
-<th>1</th>
-<td bgcolor="gray">♖</td>
-<td bgcolor="white"></td>
-<td bgcolor="gray">♗</td>
-<td bgcolor="white">♕</td>
-<td bgcolor="gray">♔</td>
-<td bgcolor="white"></td>
-<td bgcolor="gray">♘</td>
-<td bgcolor="white">♖</td>
-</tr>
-
-</table>
-
+    <script src="../../../header.js"></script>
 </body>
 </html>

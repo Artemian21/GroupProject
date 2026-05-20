@@ -1,74 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
-<meta charset="UTF-8">
-<title>Google</title>
+    <meta charset="UTF-8">
+    <title>Google - Андрій</title>
+    <link rel="stylesheet" href="../../../css/style.css">
 </head>
-
 <body>
+    <div id="header-placeholder" data-root="../../../"></div>
 
-<table width="100%" cellspacing="0" cellpadding="5">
-<tr>
-<td align="right">
-<a href="#">Gmail</a> | 
-<a href="#">Зображення</a> | 
-<a href="#">Меню</a>
-</td>
-</tr>
-</table>
+    <main class="container google-page">
+        
+        <div style="display: flex; justify-content: flex-end; align-items: center; padding: 15px 20px;">
+            <a href="#" class="g-link">Gmail</a>
+            <a href="#" class="g-link">Зображення</a>
+            <a href="#" class="g-link">Меню</a>
+            <a href="#" class="btn-login">Увійти</a>
+        </div>
 
-<br><br><br>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            
+            <h1 style="font-size: 5.5rem; margin-bottom: 20px; font-weight: 500; font-family: sans-serif; letter-spacing: -2px;">
+                <span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span style="color: #FBBC05;">o</span><span style="color: #4285F4;">g</span><span style="color: #34A853;">l</span><span style="color: #EA4335;">e</span>
+            </h1>
+            
+            <form action="#" method="get" style="width: 100%; text-align: center;">
+                <input type="text" name="q" placeholder="Пошук Google">
+                
+                <div style="margin-top: 25px;">
+                    <input type="submit" value="Пошук Google">
+                    <input type="submit" value="Мені пощастить">
+                </div>
+            </form>
 
-<table width="100%">
-<tr>
-<td align="center">
+            <div style="margin-top: 25px; font-size: 14px; color: #4d5156;">
+                Google доступний такими мовами: 
+                <a href="#" style="color: #1a0dab; text-decoration: none; padding: 0 5px;">Українська</a> | 
+                <a href="#" style="color: #1a0dab; text-decoration: none; padding: 0 5px;">English</a> | 
+                <a href="#" style="color: #1a0dab; text-decoration: none; padding: 0 5px;">Русский</a>
+            </div>
+        </div>
 
-<h1>
-<font color="#4285F4">G</font>
-<font color="#EA4335">o</font>
-<font color="#FBBC05">o</font>
-<font color="#4285F4">g</font>
-<font color="#34A853">l</font>
-<font color="#EA4335">e</font>
-</h1>
+        <footer class="footer-box">
+            <div style="text-align: center; padding: 15px 30px;">
+                <a href="#" class="g-link">Про Google</a>
+                <a href="#" class="g-link">Реклама</a>
+                <a href="#" class="g-link">Для бізнесу</a>
+                <a href="#" class="g-link">Конфіденційність</a>
+                <a href="#" class="g-link">Умови</a>
+            </div>
+        </footer>
+    </main>
 
-<br>
-
-<form>
-<input type="text" size="60" placeholder="Пошук Google">
-<br><br>
-<input type="submit" value="Пошук Google">
-<input type="submit" value="Мені пощастить">
-</form>
-
-</td>
-</tr>
-</table>
-
-<br><br><br><br><br><br>
-
-<table width="100%" cellspacing="0" cellpadding="5">
-<tr>
-<td align="center">
-    
-<p>
-Google доступний такими мовами: 
-<a href="#">Українська</a> | 
-<a href="#">English</a> | 
-<a href="#">Русский</a>
-</p>
-<br>
-
-<p>
-<a href="#">Про Google</a> | 
-<a href="#">Реклама</a> | 
-<a href="#">Для бізнесу</a> | 
-<a href="#">Конфіденційність</a> | 
-<a href="#">Умови</a>
-</p>
-</td>
-</tr>
-</table>
-
+    <script src="../../../header.js"></script>
 </body>
 </html>

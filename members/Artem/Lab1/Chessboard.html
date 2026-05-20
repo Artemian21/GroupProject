@@ -1,150 +1,120 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="uk">
 <head>
+    <meta charset="UTF-8">
     <title>Шахова дошка - Позиція</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../../../../css/style.css">
 </head>
-
 <body>
-    <header class="header">
-        <div class="logo">Командний проєкт</div>
+    <div id="header-placeholder" data-root="../../../../"></div>
 
-        <nav class="nav">
-            <a href="../../../index.html">Головна</a>
-        </nav>
-    </header>
+    <main class="container chess-page">
+        <h2 class="text-center">Ларсен – Найдорф, в 1968 році (міттельшпіль).</h2>
 
-    <main class="container">
-
-        <h2 align="center">Ларсен – Найдорф, в 1968 році (міттельшпіль).</h2>
-
-        <table id="chess" border="1" cellspacing="0" cellpadding="15" align="center">
-
+        <table id="chess" class="chess-table theme-classic">
             <tr>
-                <td></td>
-                <td align="center">A</td>
-                <td align="center">B</td>
-                <td align="center">C</td>
-                <td align="center">D</td>
-                <td align="center">E</td>
-                <td align="center">F</td>
-                <td align="center">G</td>
-                <td align="center">H</td>
+                <th></th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+                <th>F</th>
+                <th>G</th>
+                <th>H</th>
             </tr>
-
             <tr>
-                <td align="center">8</td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center">♜</td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center">♚</td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
+                <th>8</th>
+                <td class="cell-light"></td>
+                <td class="cell-dark piece-dark">♜</td>
+                <td class="cell-light"></td>
+                <td class="cell-dark"></td>
+                <td class="cell-light"></td>
+                <td class="cell-dark"></td>
+                <td class="cell-light piece-dark">♚</td>
+                <td class="cell-dark"></td>
             </tr>
-
             <tr>
-                <td align="center">7</td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center">♛</td>
-                <td bgcolor="#555" width="30" height="30" align="center">♟</td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
+                <th>7</th>
+                <td class="cell-dark"></td>
+                <td class="cell-light"></td>
+                <td class="cell-dark"></td>
+                <td class="cell-light"></td>
+                <td class="cell-dark"></td>
+                <td class="cell-light piece-dark">♛</td>
+                <td class="cell-dark piece-dark">♟</td>
+                <td class="cell-light"></td>
             </tr>
-
             <tr>
-                <td align="center">6</td>
-                <td bgcolor="#eee" width="30" height="30" align="center">♟</td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center">♟</td>
-                <td bgcolor="#555" width="30" height="30" align="center">♞</td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center">♟</td>
+                <th>6</th>
+                <td class="cell-light piece-dark">♟</td>
+                <td class="cell-dark"></td>
+                <td class="cell-light"></td>
+                <td class="cell-dark"></td>
+                <td class="cell-light piece-dark">♟</td>
+                <td class="cell-dark piece-dark">♞</td>
+                <td class="cell-light"></td>
+                <td class="cell-dark piece-dark">♟</td>
             </tr>
-
             <tr>
-                <td align="center">5</td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center">♖</td>
-                <td bgcolor="#eee" width="30" height="30" align="center">♟</td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
+                <th>5</th>
+                <td class="cell-dark"></td>
+                <td class="cell-light"></td>
+                <td class="cell-dark"></td>
+                <td class="cell-light"></td>
+                <td class="cell-dark piece-light">♖</td>
+                <td class="cell-light piece-dark">♟</td>
+                <td class="cell-dark"></td>
+                <td class="cell-light"></td>
             </tr>
-
             <tr>
-                <td align="center">4</td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center">♟</td>
-                <td bgcolor="#555" width="30" height="30" align="center">♙</td>
-                <td bgcolor="#eee" width="30" height="30" align="center">♙</td>
-                <td bgcolor="#555" width="30" height="30" align="center">♙</td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
+                <th>4</th>
+                <td class="cell-light"></td>
+                <td class="cell-dark"></td>
+                <td class="cell-light piece-dark">♟</td>
+                <td class="cell-dark piece-light">♙</td>
+                <td class="cell-light piece-light">♙</td>
+                <td class="cell-dark piece-light">♙</td>
+                <td class="cell-light"></td>
+                <td class="cell-dark"></td>
             </tr>
-
             <tr>
-                <td align="center">3</td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center">♙</td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center">♙</td>
+                <th>3</th>
+                <td class="cell-dark"></td>
+                <td class="cell-light"></td>
+                <td class="cell-dark piece-light">♙</td>
+                <td class="cell-light"></td>
+                <td class="cell-dark"></td>
+                <td class="cell-light"></td>
+                <td class="cell-dark"></td>
+                <td class="cell-light piece-light">♙</td>
             </tr>
-
             <tr>
-                <td align="center">2</td>
-                <td bgcolor="#eee" width="30" height="30" align="center">♜</td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center">♘</td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center">♙</td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
+                <th>2</th>
+                <td class="cell-light piece-dark">♜</td>
+                <td class="cell-dark"></td>
+                <td class="cell-light"></td>
+                <td class="cell-dark piece-light">♘</td>
+                <td class="cell-light"></td>
+                <td class="cell-dark"></td>
+                <td class="cell-light piece-light">♙</td>
+                <td class="cell-dark"></td>
             </tr>
-
             <tr>
-                <td align="center">1</td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center">♕</td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center"></td>
-                <td bgcolor="#eee" width="30" height="30" align="center"></td>
-                <td bgcolor="#555" width="30" height="30" align="center">♖</td>
-                <td bgcolor="#eee" width="30" height="30" align="center">♔</td>
+                <th>1</th>
+                <td class="cell-dark"></td>
+                <td class="cell-light"></td>
+                <td class="cell-dark piece-light">♕</td>
+                <td class="cell-light"></td>
+                <td class="cell-dark"></td>
+                <td class="cell-light"></td>
+                <td class="cell-dark piece-light">♖</td>
+                <td class="cell-light piece-light">♔</td>
             </tr>
-
-            <tr>
-                <td></td>
-                <td align="center">A</td>
-                <td align="center">B</td>
-                <td align="center">C</td>
-                <td align="center">D</td>
-                <td align="center">E</td>
-                <td align="center">F</td>
-                <td align="center">G</td>
-                <td align="center">H</td>
-            </tr>
-
         </table>
-
+        
         <script src="chess.js"></script>
     </main>
+    <script src="../../../../header.js"></script>
 </body>
-
 </html>

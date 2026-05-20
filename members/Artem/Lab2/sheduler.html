@@ -1,25 +1,20 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="uk">
 <head>
-    <title>Розклад</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <title>Розклад — Яременко Артем</title>
+    <link rel="stylesheet" href="../../../css/style.css">
 </head>
-
 <body>
-    <header class="header">
-        <div class="logo">Командний проєкт</div>
+    <div id="header-placeholder" data-root="../../../"></div>
 
-        <nav class="nav">
-            <a href="../../../index.html">Головна</a>
-        </nav>
-    </header>
+    <main class="container schedule-page">
+        <h1 class="text-center">Розклад занять</h1>
 
-    <main class="container">
-        <table border="1" cellspacing="0" cellpadding="15" align="center">
+        <table>
             <thead>
                 <tr>
-                    <th>Час</th>
+                    <th class="text-center">Час</th>
                     <th>Понеділок</th>
                     <th>Вівторок</th>
                     <th>Середа</th>
@@ -31,206 +26,165 @@
             </thead>
             <tbody>
                 <tr>
-                    <td colspan="8" align="center"><b>Перший тиждень</b></td>
+                    <th colspan="8" class="text-center">Перший тиждень</th>
                 </tr>
                 <tr>
-                    <td>08:00-09:35</td>
+                    <th>08:00-09:35</th>
                     <td></td>
                     <td></td>
                     <td>
-                        UI/UX дизайн (Лекц.)<br>
-                        Сябрук Ігор Миколайович<br>
-                        6.200
+                        <strong>UI/UX дизайн (Лекц.)</strong><br>
+                        <small style="color: var(--text-muted);">Сябрук І.М. | ауд. 6.200</small>
                     </td>
                     <td>
-                        Основи DevOps інженерії (Лекц.)<br>
-                        Борковська Любов Олексіївна<br>
-                        11.214
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>09:50-11:25</td>
-                    <td>
-                        Основи DevOps інженерії (Практ.)<br>
-                        Бондар Олесь Анатолійович<br>
-                        11.309
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        UI/UX дизайн (Практ.)<br>
-                        Брановицька Ірина Василівна<br>
-                        5.209
+                        <strong>Основи DevOps інженерії (Лекц.)</strong><br>
+                        <small style="color: var(--text-muted);">Борковська Л.О. | ауд. 11.214</small>
                     </td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>11:40-13:15</td>
+                    <th>09:50-11:25</th>
+                    <td>
+                        <strong>Основи DevOps інженерії (Практ.)</strong><br>
+                        <small style="color: var(--text-muted);">Бондар О.А. | ауд. 11.309</small>
+                    </td>
                     <td></td>
                     <td></td>
                     <td>
-                        Операційні системи (Лекц.)<br>
-                        Кучеренко Володимир Миколайович<br>
-                        11.311/312
+                        <strong>UI/UX дизайн (Практ.)</strong><br>
+                        <small style="color: var(--text-muted);">Брановицька І.В. | ауд. 5.209</small>
                     </td>
                     <td></td>
-                    <td>
-                        Моделювання та аналіз ПЗ (Лаб.)<br>
-                        Сказько Богдан Ігорович<br>
-                        11.309
-                    </td>
+                    <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>13:30-15:05</td>
+                    <th>11:40-13:15</th>
+                    <td></td>
+                    <td></td>
                     <td>
-                        Операційні системи (Лаб.)<br>
-                        Корнієнко Світлана Петрівна<br>
-                        11.310
+                        <strong>Операційні системи (Лекц.)</strong><br>
+                        <small style="color: var(--text-muted);">Кучеренко В.М. | ауд. 11.311/312</small>
                     </td>
                     <td></td>
                     <td>
-                        Якість ПЗ та тестування (Лекц.)<br>
-                        Мороз Олег Васильович<br>
-                        11.311/312
-                    </td>
-                    <td>
-                        Моделювання та аналіз ПЗ (Лекц.)<br>
-                        Ходаков Данііл Вікторович<br>
-                        11.311/312
-                    </td>
-                    <td>
-                        Якість ПЗ та тестування (Лаб.)<br>
-                        Корнієнко Світлана Петрівна<br>
-                        11.309
+                        <strong>Моделювання та аналіз ПЗ (Лаб.)</strong><br>
+                        <small style="color: var(--text-muted);">Сказько Б.І. | ауд. 11.309</small>
                     </td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>15:20-16:55</td>
+                    <th>13:30-15:05</th>
                     <td>
-                        Програмування для Інтернет (Лаб.)<br>
-                        Ткаченко Костянтин Олександрович<br>
-                        11.310
+                        <strong>Операційні системи (Лаб.)</strong><br>
+                        <small style="color: var(--text-muted);">Корнієнко С.П. | ауд. 11.310</small>
                     </td>
                     <td></td>
-                    <td></td>
-                    <td></td>
                     <td>
-                        Програмування для Інтернет (Лекц.)<br>
-                        Ткаченко Костянтин Олександрович<br>
-                        11.311/312
+                        <strong>Якість ПЗ та тестування (Лекц.)</strong><br>
+                        <small style="color: var(--text-muted);">Мороз О.В. | ауд. 11.311/312</small>
+                    </td>
+                    <td>
+                        <strong>Моделювання та аналіз ПЗ (Лекц.)</strong><br>
+                        <small style="color: var(--text-muted);">Ходаков Д.В. | ауд. 11.311/312</small>
+                    </td>
+                    <td>
+                        <strong>Якість ПЗ та тестування (Лаб.)</strong><br>
+                        <small style="color: var(--text-muted);">Корнієнко С.П. | ауд. 11.309</small>
                     </td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>17:10-18:45</td>
-                    <td colspan="7"></td>
-                </tr>
-                <tr>
-                    <td>19:00-20:35</td>
-                    <td colspan="7"></td>
+                    <th>15:20-16:55</th>
+                    <td>
+                        <strong>Програмування для Інтернет (Лаб.)</strong><br>
+                        <small style="color: var(--text-muted);">Ткаченко К.О. | ауд. 11.310</small>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <strong>Програмування для Інтернет (Лекц.)</strong><br>
+                        <small style="color: var(--text-muted);">Ткаченко К.О. | ауд. 11.311/312</small>
+                    </td>
+                    <td></td>
+                    <td></td>
                 </tr>
 
                 <tr>
-                    <td colspan="8" align="center"><b>Другий тиждень</b></td>
+                    <th colspan="8" class="text-center">Другий тиждень</th>
                 </tr>
                 <tr>
-                    <td>08:00-09:35</td>
+                    <th>08:00-09:35</th>
                     <td colspan="7"></td>
                 </tr>
                 <tr>
-                    <td>09:50-11:25</td>
+                    <th>09:50-11:25</th>
                     <td>
-                        Основи DevOps інженерії (Практ.)<br>
-                        Бондар Олесь Анатолійович<br>
-                        11.313
+                        <strong>Основи DevOps інженерії (Практ.)</strong><br>
+                        <small style="color: var(--text-muted);">Бондар О.А. | ауд. 11.313</small>
                     </td>
                     <td></td>
                     <td></td>
                     <td>
-                        UI/UX дизайн (Практ.)<br>
-                        Брановицька Ірина Василівна<br>
-                        5.209
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>11:40-13:15</td>
-                    <td>
-                        Якість ПЗ та тестування (Лекц.)<br>
-                        Мороз Олег Васильович<br>
-                        11.311/312
-                    </td>
-                    <td>
-                        Операційні системи (Лаб.)<br>
-                        Корнієнко Світлана Петрівна<br>
-                        11.303
-                    </td>
-                    <td>
-                        Моделювання та аналіз ПЗ (Лаб.)<br>
-                        Сказько Богдан Ігорович<br>
-                        11.310
-                    </td>
-                    <td>
-                        Програмування для Інтернет (Лаб.)<br>
-                        Ткаченко Костянтин Олександрович<br>
-                        11.305
+                        <strong>UI/UX дизайн (Практ.)</strong><br>
+                        <small style="color: var(--text-muted);">Брановицька І.В. | ауд. 5.209</small>
                     </td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>13:30-15:05</td>
+                    <th>11:40-13:15</th>
                     <td>
-                        Програмування для Інтернет (Лекц.)<br>
-                        Ткаченко Костянтин Олександрович<br>
-                        5.201
+                        <strong>Якість ПЗ та тестування (Лекц.)</strong><br>
+                        <small style="color: var(--text-muted);">Мороз О.В. | ауд. 11.311/312</small>
                     </td>
                     <td>
-                        Операційні системи (Лекц.)<br>
-                        Кучеренко Володимир Миколайович<br>
-                        5.201
+                        <strong>Операційні системи (Лаб.)</strong><br>
+                        <small style="color: var(--text-muted);">Корнієнко С.П. | ауд. 11.303</small>
                     </td>
                     <td>
-                        Якість ПЗ та тестування (Лаб.)<br>
-                        Корнієнко Світлана Петрівна<br>
-                        11.310
+                        <strong>Моделювання та аналіз ПЗ (Лаб.)</strong><br>
+                        <small style="color: var(--text-muted);">Сказько Б.І. | ауд. 11.310</small>
                     </td>
                     <td>
-                        Моделювання та аналіз ПЗ (Лекц.)<br>
-                        Ходаков Данііл Вікторович<br>
-                        6.200
+                        <strong>Програмування для Інтернет (Лаб.)</strong><br>
+                        <small style="color: var(--text-muted);">Ткаченко К.О. | ауд. 11.305</small>
                     </td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>15:20-16:55</td>
-                    <td colspan="7"></td>
-                </tr>
-                <tr>
-                    <td>17:10-18:45</td>
-                    <td colspan="7"></td>
-                </tr>
-                <tr>
-                    <td>19:00-20:35</td>
-                    <td colspan="7"></td>
+                    <th>13:30-15:05</th>
+                    <td>
+                        <strong>Програмування для Інтернет (Лекц.)</strong><br>
+                        <small style="color: var(--text-muted);">Ткаченко К.О. | ауд. 5.201</small>
+                    </td>
+                    <td>
+                        <strong>Операційні системи (Лекц.)</strong><br>
+                        <small style="color: var(--text-muted);">Кучеренко В.М. | ауд. 5.201</small>
+                    </td>
+                    <td>
+                        <strong>Якість ПЗ та тестування (Лаб.)</strong><br>
+                        <small style="color: var(--text-muted);">Корнієнко С.П. | ауд. 11.310</small>
+                    </td>
+                    <td>
+                        <strong>Моделювання та аналіз ПЗ (Лекц.)</strong><br>
+                        <small style="color: var(--text-muted);">Ходаков Д.В. | ауд. 6.200</small>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
     </main>
+    <script src="../../../header.js"></script>
 </body>
-
 </html>

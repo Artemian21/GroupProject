@@ -2,21 +2,16 @@
     const placeholder = document.getElementById('header-placeholder');
     if (!placeholder) return;
 
-    // Отримуємо відносний шлях з атрибута
     const root = placeholder.dataset.root ?? './';
 
-    // --- ДОДАНО: Автоматичне підключення файлу стилів ---
-    // Вкажіть правильний шлях до вашого CSS відносно кореня проєкту
-    const stylePath = root + 'css/header.css'; 
-    
-    // Перевіряємо, чи не підключений цей файл стилів раніше, щоб не дублювати
-    if (!document.querySelector(`link[href="${stylePath}"]`)) {
-        const linkElement = document.createElement('link');
-        linkElement.rel = 'stylesheet';
-        linkElement.href = stylePath;
-        document.head.appendChild(linkElement);
+    // Підключаємо єдиний CSS проєкту
+    const cssPath = root + 'css/style.css';
+    if (!document.querySelector(`link[href="${cssPath}"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = cssPath;
+        document.head.appendChild(link);
     }
-    // -----------------------------------------------------
 
     fetch(root + 'header.html')
         .then(res => {
@@ -26,18 +21,11 @@
         .then(html => {
             const doc = new DOMParser().parseFromString(html, 'text/html');
             const header = doc.querySelector('header');
-            
-            if (header) {
-                // Оновлюємо посилання на головну сторінку, щоб воно працювало звідусіль
-                const homeLink = header.querySelector('a[href="/index.html"], a[href="../../index.html"]');
-                if (homeLink) {
-                    homeLink.href = root + 'index.html'; 
-                }
-
-                placeholder.replaceWith(header);
-            } else {
-                console.warn('header.js: тег <header> не знайдено у header.html');
-            }
+            if (!header) return;
+            // Виправляємо посилання на головну незалежно від глибини вкладеності
+            const homeLink = header.querySelector('a');
+            if (homeLink) homeLink.href = root + 'index.html';
+            placeholder.replaceWith(header);
         })
         .catch(err => console.error('header.js:', err));
 })();

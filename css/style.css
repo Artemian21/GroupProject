@@ -1,150 +1,289 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ==========================================================
+   STYLE.CSS — ЄДИНИЙ ФАЙЛ СТИЛІВ ПРОЄКТУ
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Колірна палітра та змінні */
+    --accent:        #2563eb;
+    --accent-hover:  #1d4ed8;
+    --accent-light:  #eff6ff;
+    --accent-border: #bfdbfe;
+    --text:          #1e293b;
+    --text-muted:    #64748b;
+    --bg:            #f1f5f9;
+    --surface:       #ffffff;
+    --border:        #e2e8f0;
+    --radius-sm:     8px;
+    --radius:        14px;
+    --radius-lg:     20px;
+    --header-h:      64px;
+    --shadow-sm:     0 1px 4px rgba(0,0,0,0.06);
+    --shadow:        0 4px 16px rgba(0,0,0,0.07);
+    --shadow-lg:     0 12px 32px rgba(37,99,235,0.13);
+}
+
+/* ==========================================================
+   ЧАСТИНА 1: БАЗОВІ СТИЛІ ТА УТИЛІТИ
+   ========================================================== */
+
+*, *::before, *::after { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #eef2ff, #f8fafc);
-    color: #1e293b;
-    min-height: 100vh;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
+
+/* Допоміжні класи (Утиліти) */
+.text-center { text-align: center; }
+.text-danger { color: #ef4444; }
+
+/* ==========================================================
+   ЧАСТИНА 2: ЛЕЙАУТ ТА НАВІГАЦІЯ
+   ========================================================== */
+
+.header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--header-h);
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background: rgba(15, 23, 42, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.logo { 
+    font-size: 1rem; 
+    font-weight: 700; 
+    color: #fff; 
+    letter-spacing: 0.2px; 
+    text-decoration: none; 
+}
+
+.nav { 
+    display: flex; 
+    gap: 24px; 
+}
+
+.nav a { 
+    color: rgba(255,255,255,0.72); 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    font-weight: 500; 
+    position: relative; 
+    transition: color 0.2s; 
+}
+
+.nav a::after { 
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    bottom: -4px; 
+    width: 0; 
+    height: 2px; 
+    background: var(--accent); 
+    transition: width 0.25s; 
+}
+
+.nav a:hover { color: #fff; }
+.nav a:hover::after { width: 100%; }
 
 .container {
-    max-width: 1500px;
-    margin: auto;
-    padding: 50px 25px;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: calc(var(--header-h) + 52px) 28px 64px;
 }
 
-.title {
-    text-align: center;
-    font-size: 38px;
-    font-weight: 700;
-    margin-bottom: 50px;
-    color: #0f172a;
-}
+/* ==========================================================
+   ЧАСТИНА 3: ТИПОГРАФІКА ТА БАЗОВІ ЕЛЕМЕНТИ
+   ========================================================== */
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 28px;
-}
+h1 { font-size: 2rem; font-weight: 700; line-height: 1.25; margin-bottom: 20px; color: var(--text); }
+h2 { font-size: 1.25rem; font-weight: 600; margin: 40px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); color: var(--text); }
+h3 { font-size: 1.05rem; font-weight: 600; margin: 24px 0 8px; color: var(--text); }
+h4 { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); margin: 16px 0 6px; text-transform: uppercase; letter-spacing: 0.5px; }
 
-.card {
-    background: rgba(255,255,255,.95);
-    border-radius: 22px;
-    padding: 28px;
+p { margin-bottom: 14px; }
+strong { font-weight: 600; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.08);
+ul, ol { padding-left: 22px; margin-bottom: 14px; }
+li { margin-bottom: 6px; }
+hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+img { max-width: 100%; height: auto; border-radius: var(--radius-sm); display: block; margin: 16px 0; }
 
-    transition: all .35s ease;
+dl { margin-bottom: 16px; }
+dt { font-weight: 600; margin-top: 12px; color: var(--text); }
+dd { margin-left: 0; padding-left: 16px; color: var(--text-muted); }
 
-    border: 1px solid rgba(255,255,255,.7);
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow:
-        0 18px 45px rgba(37,99,235,.15);
-}
-
-.card img {
+.profile-img {
+    max-width: 250px;
+    width: 100%;
+    border-radius: var(--radius-sm);
+    margin: 0 0 20px 0;
     display: block;
-
-    width: 130px;
-    height: 130px;
-
-    margin: 0 auto 18px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
-    object-position: center;
-
-    border: 5px solid #e0e7ff;
-
-    box-shadow: 0 8px 22px rgba(0,0,0,.08);
+    box-shadow: var(--shadow-sm);
 }
 
-/* TEXT */
-
-.card h2 {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 8px;
+/* Глобальні таблиці (для тексту та портфоліо) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.92rem;
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
 }
+th, td { text-align: left; padding: 11px 16px; border-bottom: 1px solid var(--border); }
+th { background: var(--accent-light); font-weight: 600; color: var(--accent); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.4px; }
+tr:last-child td { border-bottom: none; }
 
-.card p {
-    text-align: center;
-    color: #64748b;
-    margin-bottom: 24px;
-    font-size: 15px;
+
+/* Форми та Кнопки */
+button, .btn {
+    display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px;
+    border: none; border-radius: var(--radius-sm); background: var(--accent);
+    color: #fff; font-size: 0.9rem; font-weight: 500; font-family: inherit;
+    cursor: pointer; transition: background 0.2s, transform 0.15s;
 }
+button:hover, .btn:hover { background: var(--accent-hover); transform: translateY(-1px); text-decoration: none; }
+button:active, .btn:active { transform: translateY(0); }
 
-.labs details {
-    margin-bottom: 14px;
-
-    background: #f8fafc;
-    border-radius: 12px;
-    overflow: hidden;
-
-    border: 1px solid #e2e8f0;
+input, textarea, select {
+    width: 100%; padding: 10px 14px; border: 1px solid var(--border);
+    border-radius: var(--radius-sm); background: var(--surface); color: var(--text);
+    font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s, box-shadow 0.2s;
+    margin-bottom: 12px;
 }
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+label { display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 4px; color: var(--text); }
 
-.labs summary {
-    padding: 14px 16px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: .25s;
-    list-style: none;
+/* ==========================================================
+   ЧАСТИНА 4: ГОЛОВНА СТОРІНКА (СІТКА КАРТОК)
+   ========================================================== */
+
+.title { text-align: center; font-size: 1.9rem; font-weight: 700; padding-top: calc(var(--header-h) + 40px); margin-bottom: 36px; color: var(--text); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; padding: 0 20px 60px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s; }
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.card img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 18px; border: 3px solid var(--accent-border); box-shadow: var(--shadow-sm); }
+.card h2 { text-align: center; font-size: 1.1rem; border: none; padding: 0; margin: 0 0 5px; }
+.card > p { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px; }
+
+.labs details { margin-bottom: 8px; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; background: var(--bg); }
+.labs summary { padding: 11px 16px; cursor: pointer; font-weight: 600; font-size: 0.875rem; list-style: none; display: flex; justify-content: space-between; align-items: center; transition: background 0.18s; color: var(--text); }
+.labs summary:hover { background: var(--accent-light); }
+.labs summary::-webkit-details-marker { display: none; }
+.labs summary::after { content: "+"; font-size: 1rem; color: var(--accent); }
+details[open] summary::after { content: "−"; }
+details[open] summary { background: var(--accent-light); }
+.labs a { display: block; padding: 9px 16px; color: var(--accent); font-size: 0.875rem; border-top: 1px solid var(--border); transition: background 0.15s, padding-left 0.15s; }
+.labs a:hover { background: var(--accent-light); padding-left: 22px; text-decoration: none; }
+
+/* ==========================================================
+   ЧАСТИНА 5: ІЗОЛЬОВАНІ СТИЛІ ДЛЯ ЛАБОРАТОРНИХ
+   ========================================================== */
+
+/* --- Лабораторна 1: Шахи --- */
+.chess-page h1, .chess-page h2 { margin-top: 0; border-bottom: none; }
+.chess-page table { width: auto; margin: 20px auto; box-shadow: none; background: transparent; }
+.chess-page td, .chess-page th { padding: 0; text-align: center; border: 1px solid var(--border); vertical-align: middle; }
+.chess-table th { background-color: var(--accent-light); color: var(--accent); font-weight: 600; font-size: 1rem; }
+
+/* Інтерактивна дошка */
+.chess-game-container { max-width: 450px; margin: 0 auto; }
+.status-bar { border: none; margin: 0 0 15px; padding: 0; font-size: 1.5rem; }
+.board-wrapper { display: flex; justify-content: center; }
+.coords-y { display: flex; flex-direction: column; width: 24px; }
+.coords-y span { height: 50px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--text-muted); }
+.coords-x { display: flex; height: 24px; margin-left: 24px; }
+.coords-x span { width: 50px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--text-muted); }
+.chess-board-grid { border-collapse: collapse; table-layout: fixed; margin: 0 !important; border: 2px solid var(--border) !important; }
+.chess-board-grid td { width: 50px; height: 50px; text-align: center; cursor: pointer; border: none !important; }
+.chess-board-grid .cell-light { background-color: #ffffff; }
+.chess-board-grid .cell-dark { background-color: #888888; }
+.chess-board-grid .cell-selected { background-color: #ffff00; }
+.chess-board-grid .cell-check { background-color: #ff0000; }
+.chess-board-grid .cell-target { background-color: #00ff00; }
+.chess-piece-icon { font-size: 3rem; line-height: 50px; display: block; color: #000; user-select: none; }
+.chess-controls { text-align: center; margin: 20px 0; gap: 10px; display: flex; justify-content: center; }
+.chess-history { margin: 20px auto 0; background: var(--surface); padding: 15px; border-radius: var(--radius-sm); border: 1px solid var(--border); width: 100%; max-width: 424px; }
+.chess-history strong { display: block; margin-bottom: 10px; }
+.move-list { min-height: 40px; word-wrap: break-word; text-align: left; color: var(--text); }
+
+/* Статичні дошки (Класична) */
+.theme-classic { font-size: 1.6rem; border: 2px solid var(--border); border-collapse: collapse; margin: 20px auto; }
+.theme-classic th, .theme-classic td { width: 45px; height: 45px; border: 1px solid #ccc; }
+.theme-classic .cell-light { background-color: #eee; }
+.theme-classic .cell-dark { background-color: #555; }
+.theme-classic .piece-light { color: #fff; }
+.theme-classic .piece-dark { color: #000; }
+
+/* Статичні дошки (Мінімалістична) */
+.theme-minimal { font-size: 1.8rem; border: 2px solid var(--border); border-collapse: collapse; margin: 20px auto; }
+.theme-minimal th, .theme-minimal td { width: 50px; height: 50px; border: 1px solid #999; }
+.theme-minimal .cell-light { background-color: #ffffff; }
+.theme-minimal .cell-dark { background-color: #888888; }
+.theme-minimal td { color: #000; }
+
+/* --- Лабораторна 2: Розклад --- */
+.schedule-page table { box-shadow: none; margin: 0 auto; }
+.schedule-page table td { vertical-align: top; }
+.schedule-page tr:hover td { background: revert; }
+
+/* --- Лабораторна 2: Клон Google --- */
+.google-page { 
+    max-width: 100%; 
+    padding: 64px 0 0 0; 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
 }
-
-.labs summary:hover {
-    background: #eff6ff;
+.google-page table { box-shadow: none; background: transparent; margin: 0 auto; border: none; }
+.google-page th, .google-page td { border: none; padding: 0; background: transparent; }
+.google-page tr:hover td { background: transparent; }
+.google-page input[type="text"] {
+    width: 100%; max-width: 580px; border: 1px solid #dfe1e5;
+    border-radius: 24px; padding: 12px 20px; box-shadow: none;
+    margin: 0 auto; display: block; outline: none; background: transparent;
 }
-
-.labs summary::-webkit-details-marker {
-    display: none;
+.google-page input[type="text"]:hover, .google-page input[type="text"]:focus {
+    box-shadow: 0 1px 6px rgba(32,33,36,.28); border-color: transparent;
 }
-
-.labs summary::after {
-    content: "+";
-    float: right;
-    font-size: 18px;
-    transition: .25s;
+.google-page input[type="button"], .google-page input[type="submit"] {
+    width: auto; display: inline-block; background: #f8f9fa; color: #3c4043;
+    border: 1px solid #f8f9fa; border-radius: 4px; padding: 0 16px;
+    height: 36px; cursor: pointer; margin: 11px 4px; font-size: 14px; font-weight: normal;
 }
-
-details[open] summary::after {
-    content: "−";
+.google-page input[type="button"]:hover, .google-page input[type="submit"]:hover {
+    border: 1px solid #dadce0; box-shadow: 0 1px 1px rgba(0,0,0,.1); background: #f8f9fa; transform: none;
 }
-
-.labs a {
-    display: block;
-
-    padding: 12px 18px;
-
-    text-decoration: none;
-    color: #2563eb;
-
-    border-top: 1px solid #e2e8f0;
-
-    transition: .2s;
+.google-page .btn-login {
+    background: #1a73e8; color: white; border: none; padding: 9px 24px;
+    border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 500;
+    display: inline-block; cursor: pointer; margin-left: 10px;
 }
-
-.labs a:hover {
-    background: #eff6ff;
-    padding-left: 24px;
-}
-
-.lab-content {
-    background: white;
-    border-radius: 20px;
-    padding: 35px;
-
-    box-shadow: 0 10px 35px rgba(0,0,0,.08);
-
-    max-width: 1200px;
-    margin: auto;
-}
+.google-page .btn-login:hover { background: #1b66c9; box-shadow: 0 1px 2px rgba(60,64,67,0.3); color: white; transform: none; }
+.google-page .g-link { color: #5f6368; font-size: 14px; text-decoration: none; padding: 0 8px; }
+.google-page .g-link:hover { text-decoration: underline; color: #5f6368; }
+.google-page .footer-box { background: #f2f2f2; width: 100%; border-top: 1px solid #dadce0; }
