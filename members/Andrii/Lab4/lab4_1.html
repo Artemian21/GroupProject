@@ -3,63 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Календар</title>
-
-<style>
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-}
-
-/* Звичайні дні */
-td {
-    color: black;
-}
-
-/* Вихідні  */
-td:nth-child(2),
-td:nth-child(8) {
-    color: green;
-}
-
-/* Сірі дні  */
-tr:nth-child(2) td:nth-child(-n+5){
-    color: gray;
-}
-
-/* Свята */
-tr:nth-child(2) td:nth-child(6),  /* 1 */
-tr:nth-child(3) td:nth-child(4),  /* 6 */
-tr:nth-child(3) td:nth-child(5),  /* 6 */
-tr:nth-child(4) td:nth-child(5),  /* 14 */
-tr:nth-child(5) td:nth-child(6),  /* 22 */
-tr:nth-child(6) td:nth-child(4),  /* 27 */
-tr:nth-child(6) td:nth-child(6) { /* 29 */
-    color: red;
-    font-weight: bold;
-}
-
-/* День народження */
-tr:nth-child(6) td:nth-child(2) {
-    color: orange;
-    font-weight: bold;
-}
-</style>
+    <link rel="stylesheet" href="../../../css/style.css">
 </head>
 
 <body>
+    <header class="header">
+        <div class="logo">Командний проєкт</div>
+        <nav class="nav">
+            <a href="../../../index.html">Головна</a>
+        </nav>
+    </header>
 
-<h1 align="center">January 2026</h1>
+    <main class="container">
+        <div class="lab-content static-calendar-page">
+<div class="calendar-nav">
+    <button id="prevMonth">← попередній місяць</button>
+    <h1 id="monthTitle" class="text-center">January 2026</h1>
+    <button id="nextMonth">наступний місяць →</button>
+</div>
 
 <table>
+<thead>
 <tr>
     <th>No.</th>
     <th>Sunday</th>
@@ -70,63 +34,71 @@ tr:nth-child(6) td:nth-child(2) {
     <th>Friday</th>
     <th>Saturday</th>
 </tr>
-
-<tr>
-    <td>1</td>
-    <td>28</td>
-    <td>29</td>
-    <td>30</td>
-    <td>31</td>
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-</tr>
-
-<tr>
-    <td>2</td>
-    <td>4</td>
-    <td>5</td>
-    <td>6</td>
-    <td>7</td>
-    <td>8</td>
-    <td>9</td>
-    <td>10</td>
-</tr>
-
-<tr>
-    <td>3</td>
-    <td>11</td>
-    <td>12</td>
-    <td>13</td>
-    <td>14</td>
-    <td>15</td>
-    <td>16</td>
-    <td>17</td>
-</tr>
-
-<tr>
-    <td>4</td>
-    <td>18</td>
-    <td>19</td>
-    <td>20</td>
-    <td>21</td>
-    <td>22</td>
-    <td>23</td>
-    <td>24</td>
-</tr>
-
-<tr>
-    <td>5</td>
-    <td>25</td>
-    <td>26</td>
-    <td>27</td>
-    <td>28</td>
-    <td>29</td>
-    <td>30</td>
-    <td>31</td>
-</tr>
-
+</thead>
+<tbody id="calendarBody"></tbody>
 </table>
+        </div>
+    </main>
+    <script>
+        const monthTitle = document.getElementById("monthTitle");
+        const calendarBody = document.getElementById("calendarBody");
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const holidays = new Set(["1-1", "1-6", "1-7", "1-14", "1-22", "1-27", "1-29"]);
+        const specialDays = new Set(["1-25"]);
+        let currentDate = new Date(2026, 0, 1);
 
+        function renderCalendar() {
+            calendarBody.innerHTML = "";
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            monthTitle.textContent = `${monthNames[month]} ${year}`;
+
+            const firstDay = new Date(year, month, 1);
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const startOffset = firstDay.getDay();
+            const totalCells = Math.ceil((startOffset + daysInMonth) / 7) * 7;
+            const date = new Date(year, month, 1 - startOffset);
+
+            for (let rowIndex = 0; rowIndex < totalCells / 7; rowIndex++) {
+                const row = document.createElement("tr");
+                const numberCell = document.createElement("td");
+                numberCell.textContent = rowIndex + 1;
+                row.appendChild(numberCell);
+
+                for (let dayIndex = 0; dayIndex < 7; dayIndex++) {
+                    const cell = document.createElement("td");
+                    const day = date.getDate();
+                    const cellMonth = date.getMonth();
+                    const key = `${cellMonth + 1}-${day}`;
+                    cell.textContent = day;
+
+                    if (cellMonth !== month) {
+                        cell.classList.add("other-month");
+                    } else {
+                        if (dayIndex === 0 || dayIndex === 6) cell.classList.add("weekend");
+                        if (holidays.has(key)) cell.classList.add("holiday");
+                        if (specialDays.has(key)) cell.classList.add("special-day");
+                    }
+
+                    row.appendChild(cell);
+                    date.setDate(date.getDate() + 1);
+                }
+
+                calendarBody.appendChild(row);
+            }
+        }
+
+        document.getElementById("prevMonth").addEventListener("click", () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        document.getElementById("nextMonth").addEventListener("click", () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        renderCalendar();
+    </script>
 </body>
 </html>
