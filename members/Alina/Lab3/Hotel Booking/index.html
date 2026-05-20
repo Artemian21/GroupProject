@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Booking</title>
+</head>
+<body>
+  <div id="header-placeholder" data-root="../../../../"></div>
+  <table width="100%" cellpadding="10" cellspacing="0">
+    <tr>
+      <td align="center">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=120&h=80&fit=crop" alt="Hotel room 1" width="120" height="80"/>
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=120&h=80&fit=crop" alt="Hotel room 2" width="120" height="80"/>
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=120&h=80&fit=crop" alt="Sea view"     width="120" height="80"/>
+      </td>
+    </tr>
+  </table>
+
+  <br/>
+
+  <h1 align="center">Hotel Booking</h1>
+  <p align="center"><i>Special discounts for "Програмування для Інтернет" students</i></p>
+
+  <hr/>
+
+  <form>
+
+    <table width="100%" cellpadding="6" cellspacing="0">
+      <tr valign="top">
+
+        <!-- Name -->
+        <td width="50%">
+          <label for="firstName"><b>Name</b> <font color="red">*</font></label><br/>
+          <br/>
+          <input type="text"  id="firstName"  name="firstName"  placeholder="First Name"  size="18" required/>
+          &nbsp;
+          <input type="text"  id="lastName"   name="lastName"   placeholder="Last Name"   size="18" required/>
+          <br/>
+          <small>First Name</small>
+          <small>Last Name</small>
+
+        </td>
+
+        <!-- Email -->
+        <td width="50%">
+          <label for="email"><b>E-mail</b> <font color="red">*</font></label><br/>
+          <br/>
+          <input type="email" id="email" name="email"
+                 placeholder="ex: myname@example.com"
+                 size="36" required/><br/>
+          <small>example@example.com</small>
+        </td>
+
+      </tr>
+    </table>
+
+    <br/>
+
+    <table width="100%" cellpadding="6" cellspacing="0">
+      <tr valign="top">
+
+        <!-- Room Type -->
+        <td width="50%">
+          <label for="roomType"><b>Room Type</b></label><br/><br/>
+          <select id="roomType" name="roomType" size="1">
+            <option value="">Please Select</option>
+            <option value="single">Single</option>
+            <option value="double">Double</option>
+            <option value="suite">Suite</option>
+            <option value="deluxe">Deluxe</option>
+          </select>
+        </td>
+
+        <!-- Number of Guests -->
+        <td width="50%">
+          <label for="guests"><b>Number of Guests</b> <font color="red">*</font></label><br/><br/>
+          <input type="number" id="guests" name="guests"
+                 placeholder="e.g., 4"
+                 min="1" max="10"
+                 size="20" required/>
+          <br/>
+          <small>(min 1, max 10)</small>
+        </td>
+
+      </tr>
+    </table>
+
+    <br/>
+
+    <table width="100%" cellpadding="6" cellspacing="0">
+      <tr valign="top">
+        <td>
+          <label for="arrivalDate"><b>Arrival Date &amp; Time</b> <font color="red">*</font></label><br/><br/>
+          <input type="date" id="arrivalDate" name="arrivalDate" value="2026-03-21" required/>
+          <input type="number" id="arrHour"   name="arrHour"   placeholder="12" min="0" max="23" size="3" title="Hour"/>
+          <b>:</b>
+          <input type="number" id="arrMinute" name="arrMinute" placeholder="40" min="0" max="59" size="3" title="Minutes"/>
+          <select id="ampm" name="ampm">
+            <option value="AM">AM</option>
+            <option value="PM" selected>PM</option>
+          </select>
+          <br/>
+          <small>Hour</small>
+          <small>Minutes</small>
+        </td>
+      </tr>
+    </table>
+
+    <br/>
+
+    <table width="100%" cellpadding="6" cellspacing="0">
+      <tr valign="top">
+        <td>
+          <label><b>Departure Date</b> <font color="red">*</font></label><br/><br/>
+
+          <select id="depMonth" name="depMonth" required>
+            <option value="">Please select a month</option>
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+
+          
+          <select id="depDay" name="depDay" required>
+            <option value="">Please select a day</option>
+            <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+            <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+            <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+            <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+            <option value="13">13</option><option value="14">14</option><option value="15">15</option>
+            <option value="16">16</option><option value="17">17</option><option value="18">18</option>
+            <option value="19">19</option><option value="20">20</option><option value="21">21</option>
+            <option value="22">22</option><option value="23">23</option><option value="24">24</option>
+            <option value="25">25</option><option value="26">26</option><option value="27">27</option>
+            <option value="28">28</option><option value="29">29</option><option value="30">30</option>
+            <option value="31">31</option>
+          </select>
+
+          <select id="depYear" name="depYear" required>
+            <option value="">Please select a year</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+          </select>
+
+          <br/>
+          <small>Month</small>
+          <small>Day</small>
+          <small>Year</small>    
+        </td>
+      </tr>
+    </table>
+
+    <br/>
+
+    <table width="100%" cellpadding="6" cellspacing="0">
+      <tr valign="top">
+        <td>
+          <label><b>Free Pickup?</b> <font color="red">*</font></label><br/><br/>
+
+          <input type="radio" id="pickupYes" name="pickup" value="yes" required/>
+          <label for="pickupYes">Yes Please! - Pick me up on arrival</label>
+          <input type="radio" id="pickupNo" name="pickup" value="no"/>
+          <label for="pickupNo">No Thanks - I'll make my own way there</label>
+        </td>
+      </tr>
+    </table>
+
+    <br/>
+
+    <table width="100%" cellpadding="6" cellspacing="0">
+      <tr>
+        <td>
+          <label for="flightNum"><b>Flight Number</b></label><br/><br/>
+          <input type="text" id="flightNum" name="flightNum"
+                 placeholder="" size="40"
+                 title="Enter your flight number if you selected free pickup"/>
+        </td>
+      </tr>
+    </table>
+
+    <br/>
+
+    <table width="100%" cellpadding="6" cellspacing="0">
+      <tr valign="top">
+        <td>
+          <label><b>Meals</b> <font color="red">*</font></label><br/><br/>
+
+          <input type="checkbox" id="mealBreakfast"    name="meals" value="breakfast"/>
+          <label for="mealBreakfast">breakfast</label><br/>
+
+          <input type="checkbox" id="mealLunch"        name="meals" value="lunch"/>
+          <label for="mealLunch">lunch</label><br/>
+
+          <input type="checkbox" id="mealAfternoonTea" name="meals" value="afternoon tea"/>
+          <label for="mealAfternoonTea">afternoon tea</label><br/>
+
+          <input type="checkbox" id="mealDinner"       name="meals" value="dinner"/>
+          <label for="mealDinner">dinner</label>
+        </td>
+      </tr>
+    </table>
+
+    <br/>
+
+    <table width="100%" cellpadding="6" cellspacing="0">
+      <tr valign="top">
+        <td>
+          <label for="special"><b>Special Requests</b></label><br/><br/>
+          <textarea id="special" name="special"
+                    rows="6" cols="55"></textarea>
+        </td>
+      </tr>
+    </table>
+
+    <br/><br/>
+
+    <table width="100%" cellpadding="6" cellspacing="0">
+      <tr>
+        <td align="center">
+          <input type="submit" value="Submit"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+      <script src="../../../../header.js"></script>
+
+</body>
+</html>

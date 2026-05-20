@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Опитування: Академічна доброчесність</title>
+</head>
+<body>
+    <div id="header-placeholder" data-root="../../../../"></div>
+
+    <h2 align="center">Академічна доброчесність</h2>
+
+    <hr>
+    
+    <form>
+    <p>
+        <b>1. Твоя група (наприклад, Бст-121-24-4-ПІ):</b><br>
+        <input type="text" name="group" size="30" maxlength="20" required placeholder="Введи свою групу">
+    </p>
+
+    <p>
+        <b>2. Чи вважаєш ти, що плагіат — це серйозне порушення?</b><br>
+        <input type="radio" name="plagiarism_serious" value="yes" id="r1" checked>
+        <label for="r1">Так, завжди</label><br>
+        <input type="radio" name="plagiarism_serious" value="sometimes" id="r2">
+        <label for="r2">Залежить від ситуації</label><br>
+        <input type="radio" name="plagiarism_serious" value="no" id="r3">
+        <label for="r3">Ні, це перебільшення</label>
+    </p>
+
+    <p>
+        <b>3. Які дії, на твою думку, є порушенням академічної доброчесності? (можна обрати кілька)</b><br>
+        <input type="checkbox" name="violations[]" value="copy" id="c1">
+        <label for="c1">Списування на іспиті</label><br>
+        <input type="checkbox" name="violations[]" value="plagiat" id="c2">
+        <label for="c2">Копіювання тексту без посилання</label><br>
+        <input type="checkbox" name="violations[]" value="buy" id="c3">
+        <label for="c3">Купівля готової роботи</label><br>
+        <input type="checkbox" name="violations[]" value="fake" id="c4">
+        <label for="c4">Підробка даних у науковій роботі</label><br>
+        <input type="checkbox" name="violations[]" value="help" id="c5">
+        <label for="c5">Дозволити списати в іншого</label>
+    </p>
+
+    <p>
+        <b>4. Як часто ти стикаєшся з ситуаціями, коли потрібно вирішувати — списувати чи ні?</b><br>
+        <select name="frequency" size="1">
+            <option value="">Обери варіант</option>
+            <option value="never">Ніколи</option>
+            <option value="rarely">Дуже рідко</option>
+            <option value="sometimes">Іноді</option>
+            <option value="often">Досить часто</option>
+            <option value="always">Майже на кожній парі/іспиті</option>
+        </select>
+    </p>
+
+    <p>
+        <b>5. Що, на твою думку, найбільше заважає дотриманню академічної доброчесності в університеті?</b><br>
+        <textarea name="opinion" rows="4" cols="60" placeholder="Напиши свою думку..."></textarea>
+    </p>
+  
+    <p>
+        <b>6. Оціни рівень академічної доброчесності в твоїй групі (1 – дуже низький, 10 – дуже високий)</b><br>
+        <input type="range" name="group_honesty" min="1" max="10" step="1" value="5">
+        <output>5</output>
+    </p>
+
+    <p>
+        <b>7. Коли ти востаннє здавав(ла) роботу, яку писав(ла) повністю самостійно?</b><br>
+        <input type="date" name="last_independent">
+    </p>
+
+    <p>
+        <b>8. О котрій годині ти найчастіше готуєшся до пар? (можна пропустити)</b><br>
+        <input type="time" name="study_time">
+    </p>
+
+    <p align="center">
+        <br><br>
+        <input type="submit" value="Надіслати відповіді">
+        <input type="reset" value="Очистити форму">
+    </p>
+
+</form>
+    <script src="../../../../header.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мої списки</title>
+    <style>
+        :root {
+            --color-games-even-bg:    #93fc8d;
+            --color-games-even-text:  #1d2833;
+            --color-movies-blue:      #0400ff;
+            --color-subjects-first-bg:#ffefbb;
+            --color-subjects-first-fg:#2f2401;
+            --color-subjects-last-bg: #ff6868;
+            --color-subjects-last-fg: #2b0000;
+        }
+
+        .games-list li:nth-child(2n) {
+            background-color: var(--color-games-even-bg);
+            color:            var(--color-games-even-text);
+        }
+
+        .movies-list li:nth-child(3n+2) {
+            color: var(--color-movies-blue);
+        }
+
+        .subjects-list dt:first-of-type,
+        .subjects-list dd:first-of-type {
+            background-color: var(--color-subjects-first-bg);
+            color:            var(--color-subjects-first-fg);
+        }
+
+        .subjects-list dt:last-of-type,
+        .subjects-list dd:last-of-type {
+            background-color: var(--color-subjects-last-bg);
+            color:            var(--color-subjects-last-fg);
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder" data-root="../../../"></div>
+    <div>
+
+
+    <h2>Улюблені ігри</h2>
+            <label>
+            Фон:
+            <input type="color" value="#93fc8d"
+                oninput="setVar('--color-games-even-bg', this.value)">
+        </label>
+        <br>
+        <label>
+             Текст:
+            <input type="color" value="#1d2833"
+                oninput="setVar('--color-games-even-text', this.value)">
+        </label>
+    <ul class="games-list">
+        <li>Відьмак 3: Дикий Гін (The Witcher 3)</li>
+        <li>Sentence</li>
+        <li>Valorant</li>
+        <li>Cyberpunk 2077</li>
+        <li>Stardew Valley</li>
+        <li>Resident Evil 2</li>
+        <li>Genshin Impact</li>
+    </ul>
+
+    <h2>Улюблені фільми, серіали та аніме</h2>
+    <label>Колір:
+        <input type="color" value="#0400ff"
+        oninput="setVar('--color-movies-blue', this.value)">
+    </label>
+    <ol class="movies-list">
+        <li>Володар перснів (The Lord of the Rings)</li>
+        <li>Атака титанів (Attack on Titan)</li>
+        <li>Матриця (The Matrix)</li>
+        <li>Початок (Inception)</li>
+        <li>Зошит смерті (Death Note)</li>
+        <li>Інтерстеллар (Interstellar)</li>
+        <li>Віднесені привидами (Spirited Away)</li>
+        <li>Кримінальне чтиво (Pulp Fiction)</li>
+        <li>Темний лицар (The Dark Knight)</li>
+        <li>Дюна (Dune)</li>
+        <li>Дивні дива (Stranger Things)</li>
+    </ol>
+
+    <h2>Улюблені предмети</h2>
+    <label>Предмети:
+        <br>
+        Фон першого:
+        <input type="color" value="#ffefbb" oninput="setVar('--color-subjects-first-bg', this.value)">
+    </label>
+    <label>
+        Текст першого:
+        <input type="color" value="#2f2401" oninput="setVar('--color-subjects-first-fg', this.value)">
+    </label>
+    <hr>
+    <label>
+        Фон останнього:
+        <input type="color" value="#ff6868" oninput="setVar('--color-subjects-last-bg', this.value)">
+    </label>
+    <label>
+        Текст останнього:
+        <input type="color" value="#2b0000" oninput="setVar('--color-subjects-last-fg', this.value)">
+    </label>
+    <dl class="subjects-list">
+        <dt>UI/UX дизайн</dt>
+        <dd>Проєктування користувацьких інтерфейсів, дослідження поведінки користувачів та створення інтерактивних прототипів.</dd>
+
+        <dt>Мультимедійні, ігрові та розважальні системи</dt>
+        <dd>Розробка комп'ютерних ігор, додатків, робота з комп'ютерною графікою, звуком та технологіями віртуальної чи доповненої реальності.</dd>
+
+        <dt>Бази даних</dt>
+        <dd>Проєктування, створення та адміністрування сховищ інформації, вивчення мови SQL та методів управління великими обсягами даних.</dd>
+
+        <dt>Алгоритми та структури даних</dt>
+        <dd>Вивчення способів ефективної організації даних у пам'яті комп'ютера та розробка оптимальних кроків для їх пошуку, сортування й розв'язання складних обчислювальних задач.</dd>
+
+        <dt>Програмування для інтернет</dt>
+        <dd>Створення вебдодатків та динамічних сайтів, вивчення клієнтських (HTML, CSS, JavaScript) та серверних технологій веброзробки.</dd>
+    </dl>
+    </div>
+    <script>
+        function setVar(name, value) {
+            document.documentElement.style.setProperty(name, value);
+        }
+    </script>
+    <script src="../../../header.js"></script>
+</body>
+</html>

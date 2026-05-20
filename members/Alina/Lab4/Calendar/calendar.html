@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Календар</title>
+    <link rel="stylesheet" href="styles/calendar.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <div id="header-placeholder" data-root="../../../../"></div>
+    <div class="body">
+
+    <nav>
+        <button id="prev">
+            <span class="material-symbols-outlined"> arrow_back</span>
+        </button>
+        <h1 id="month-title"></h1>
+        <button id="next">
+            <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+    </nav>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Понеділок</th>
+                <th>Вівторок</th>
+                <th>Середа</th>
+                <th>Четвер</th>
+                <th>П'ятниця</th>
+                <th>Субота</th>
+                <th>Неділя</th>
+            </tr>
+        </thead>
+        <tbody id="calendar-body"></tbody>
+    </table>
+</div>
+
+        <script src="../../../../header.js"></script>
+
+    <script src="calendar.js"></script>
+
+</body>
+</html>
